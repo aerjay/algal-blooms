@@ -74,6 +74,8 @@ var lineChartData = {
         borderColor: "#5C755F",
         pointBackgroundColor: "#9C9F84",
         fill: false,
+        pointRadius: 6,
+        pointHoverRadius: 6,
         data: [
             randomScalingFactor(),
             randomScalingFactor(),
