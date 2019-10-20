@@ -103,7 +103,7 @@ product = 'MCD43A4'
 
 # Let's look at the tile containing Chicago, IL, on May 15, 2019 (day of year 135)
 h, v = lat_lon_to_modis_tiles(42.124753, -81.769110)
-daynum = '2011002'
+daynum = '2011352'
 folder = product + '/' + '{:0>2d}/{:0>2d}'.format(h, v) + '/' + daynum
 
 # Find all .tiff files from this tile on this day, one file per channel
