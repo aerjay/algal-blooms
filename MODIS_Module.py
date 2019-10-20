@@ -33,7 +33,7 @@ modis_tile_extents = np.genfromtxt(modis_tile_extents_url,
 
 modis_blob_service = BlockBlobService(account_name=modis_account_name, sas_token=modis_sas_url)
 
-# %matplotlib inline
+#%matplotlib inline
 
 def lat_lon_to_modis_tiles(lat, lon):
     """
@@ -96,15 +96,14 @@ def download_url_to_temp_file(url):
 
 
 # Files are stored according to:
-#
-# http://modissa.blob.core.windows.net/[product]/[htile]/[vtile]/[year][day]/filename
+# http://modissa.blob.core.windows.net/[product]/[htile]/[vtile]/[year][day]/kifilename
 
 # Surface reflectance
 product = 'MCD43A4'
 
 # Let's look at the tile containing Chicago, IL, on May 15, 2019 (day of year 135)
-h, v = lat_lon_to_modis_tiles(41.881832, -87.623177)
-daynum = '2019135'
+h, v = lat_lon_to_modis_tiles(42.124753, -81.769110)
+daynum = '2011002'
 folder = product + '/' + '{:0>2d}/{:0>2d}'.format(h, v) + '/' + daynum
 
 # Find all .tiff files from this tile on this day, one file per channel
@@ -129,7 +128,7 @@ for ifn in channels:
 rgb = np.dstack((image_data[0], image_data[1], image_data[2]))
 np.clip(rgb, 0, 1, rgb)
 plt.imshow(rgb)
-
+plt.show()
 input("Press Enter to continue...")
 
 shutil.rmtree(modis_temp_path)
