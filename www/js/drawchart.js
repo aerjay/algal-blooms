@@ -34,7 +34,6 @@ var customTooltips = function(tooltip) {
     if (tooltip.body) {
         var titleLines = tooltip.title || [];
         var bodyLines = tooltip.body.map(getBody);
-
         var innerHtml = '<thead>';
 
         titleLines.forEach(function(title) {
@@ -48,7 +47,7 @@ var customTooltips = function(tooltip) {
           //  style += '; border-color:' + colors.borderColor;
           //  style += '; border-width: 2px';
            // var span = '<span class="chartjs-tooltip-key" style="' + style + '"></span>';
-            innerHtml += '<tr><td><img src="img/photo1.png" height=300px width=300px> </td></tr>';
+            innerHtml += '<tr><td><img src="img/'+tooltip.title[0]+'lakeerie.png" height=300px width=300px> </td></tr>';
         });
         innerHtml += '</tbody>';
 
@@ -72,10 +71,11 @@ var customTooltips = function(tooltip) {
 var lineChartData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [{
-        label: 'My First dataset',
-        borderColor: window.chartColors.red,
-        pointBackgroundColor: window.chartColors.red,
+        borderColor: "#5C755F",
+        pointBackgroundColor: "#9C9F84",
         fill: false,
+        pointRadius: 6,
+        pointHoverRadius: 6,
         data: [
             randomScalingFactor(),
             randomScalingFactor(),
