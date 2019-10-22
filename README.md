@@ -16,13 +16,13 @@ Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-o
 
 ## Meet the Team
 From Left to Right:
-**Chi Nguyen, B.**
-**Aer Jay, B.**
-**Benjamin Lee, B.**
-**James Xie, B. ASc. Engineering Chemistry**
+- **Chi Nguyen, B.**
+- **Aer Jay, B.**
+- **Benjamin Lee, B.**
+- **James Xie, B. ASc. Engineering Chemistry**
 James is an operations consultant with Stroud International, with a background in chemical engineering and chemistry. James has worked on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge
 
-**Kal Radikov, B. ASc. Computer Engineering**
+- **Kal Radikov, B. ASc. Computer Engineering**
 
 ## What Are Algae Blooms
 
@@ -43,8 +43,8 @@ James is an operations consultant with Stroud International, with a background i
 
 ## Next Steps
 #### Back End
-- [] Access to the MODIS-Aqua product to  
-- [] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
+- [ ] Access to the MODIS-Aqua product to  
+- [ ] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
 
 #### Front End
 
