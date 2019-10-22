@@ -5,39 +5,49 @@ Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-o
 
 # Bloomer: Early Warning System
   * [Meet the Team](#meet-the-team)
-  * [1. What Are Algae Blooms?](#what-are-algae-blooms)
-  * [2. Impact of Algae Blooms](#impact-of-algae-glooms)
-  * [3. What Causes Algae Blooms?](#what-causes-algae-blooms)
-  * [4. Vision](#Vision)
-  * [5. Back End](#back-end)
-  * [6. Front End](#front-end)
-  * [7. Next Steps](#next-steps)
+  * [What Are Algae Blooms](#what-are-algae-blooms)
+  * [Impact of Algae Blooms](#impact-of-algae-glooms)
+  * [What Causes Algae Blooms](#what-causes-algae-blooms)
+  * [Vision](#Vision)
+  * [Back End](#back-end)
+  * [Front End](#front-end)
+  * [Next Steps](#next-steps)
   * [References](#references)
 
 ## Meet the Team
-**Aer Jay,**
-
-**Benjamin Lee,**
-
-**Chi Nguyen,**
+From Left to Right:
+**Chi Nguyen, B.**
+**Aer Jay, B.**
+**Benjamin Lee, B.**
+**James Xie, B. ASc. Engineering Chemistry**
+James is an operations consultant with Stroud International, with a background in chemical engineering and chemistry. James has worked on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge
 
 **Kal Radikov, B. ASc. Computer Engineering**
 
-**James Xie, B. ASc. Engineering Chemistry**
-James is an operations consultant with Stroud International, with a background in 
+## What Are Algae Blooms
 
-## 1. What Are Algae Blooms?
+## Impact of Algae Blooms
 
-## 2. Impact of Algae Blooms
+## What Causes Algae Blooms
 
-## 3. What Causes Algae Blooms?
+![variable analysis]("Variable analysis of algae blooms")
 
-## 4. Vision
+## Vision
 
-## 5. Back End
+## Back End
+#### Database
 
-## 6. Front End
+#### Classification
 
-## 7. Next Steps
+## Front End
+
+## Next Steps
+#### Back End
+- [] Access to the MODIS-Aqua product to  
+- [] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
+
+#### Front End
+
+#### Space Segment
 
 ## References
