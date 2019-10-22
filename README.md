@@ -17,12 +17,15 @@ Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-o
 ## Meet the Team
 From Left to Right:
 - **Chi Nguyen, B.**
+>
 - **Aer Jay, B.**
+>
 - **Benjamin Lee, B.**
+>
 - **James Xie, B. ASc. Engineering Chemistry**
-> James is an operations consultant with Stroud International, with a background in chemical engineering and chemistry. James has worked > on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge
-
+> James is an operations consultant at Stroud International, with a background in chemical engineering and chemistry. James has worked on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
 - **Kal Radikov, B. ASc. Computer Engineering**
+>
 
 ## What Are Algae Blooms
 
