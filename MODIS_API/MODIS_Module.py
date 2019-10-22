@@ -5,6 +5,9 @@ import shutil
 import urllib
 import matplotlib.pyplot as plt
 import rasterio
+import cv2
+from sklearn.cluster import KMeans
+import scipy.misc
 from azure.storage.blob import BlockBlobService
 
 # Storage locations are documented at http://aka.ms/ai4edata-modis
@@ -33,7 +36,7 @@ modis_tile_extents = np.genfromtxt(modis_tile_extents_url,
 
 modis_blob_service = BlockBlobService(account_name=modis_account_name, sas_token=modis_sas_url)
 
-#%matplotlib inline
+# %matplotlib inline
 
 def lat_lon_to_modis_tiles(lat, lon):
     """
@@ -91,6 +94,7 @@ def download_url(url, destination_filename):
 
 def download_url_to_temp_file(url):
     fn = os.path.join(modis_temp_path, next(tempfile._get_candidate_names()))
+    print(modis_temp_path)
     download_url(url, fn)
     return fn
 
@@ -129,6 +133,72 @@ rgb = np.dstack((image_data[0], image_data[1], image_data[2]))
 np.clip(rgb, 0, 1, rgb)
 plt.imshow(rgb)
 plt.show()
-input("Press Enter to continue...")
+
+class DominantColors:
+    CLUSTERS = None
+    IMAGE = None
+    COLORS = None
+    LABELS = None
+
+    def __init__(self, image, clusters=3):
+        self.CLUSTERS = clusters
+        self.IMAGE = image
+
+    def dominantColors(self):
+        # read image
+        img = cv2.imread(self.IMAGE)
+
+        # convert to rgb from bgr
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+        # reshaping to a list of pixels
+        print("image shape:" + str(img.shape[0]) + " by " + str(img.shape[1]))
+        img = img.reshape((img.shape[0] * img.shape[1], 3))
+
+        # save image after operations
+        self.IMAGE = img
+
+        # using k-means to cluster pixels
+        kmeans = KMeans(n_clusters=self.CLUSTERS)
+        kmeans.fit(img)
+
+        # the cluster centers are our dominant colors.
+        self.COLORS = kmeans.cluster_centers_
+
+        # save labels
+        self.LABELS = kmeans.labels_
+
+        # returning after converting to integer from float
+        return self.COLORS.astype(int)
+
+colors = "Figure_1.png"
+clusters = 5
+dc = DominantColors(colors, clusters)
+colors = dc.dominantColors()
+print(colors)
+print(dc.LABELS.shape)
+
+length, colors = dc.IMAGE.shape
+
+for i in range(length):
+    if dc.LABELS[i] == 1:
+        dc.IMAGE[i] = [255, 0, 0]
+    if dc.LABELS[i] == 0:
+        dc.IMAGE[i] = [255, 255, 255]
+    if dc.LABELS[i] == 4:
+        dc.IMAGE[i] = [0, 0, 0]
+    if dc.LABELS[i] == 2:
+        dc.IMAGE[i] = [0, 255, 0]
+    if dc.LABELS[i] == 3:
+        dc.IMAGE[i] = [0, 0, 255]
+
+dc.IMAGE = dc.IMAGE.reshape((476, 640, 3))
+
+medianBlur = cv2.medianBlur(dc.IMAGE, 3)
+
+plt.imshow(medianBlur)
+plt.show()
+
+
 
 shutil.rmtree(modis_temp_path)
