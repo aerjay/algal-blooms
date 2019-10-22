@@ -20,7 +20,7 @@ From Left to Right:
 - **Aer Jay, B.**
 - **Benjamin Lee, B.**
 - **James Xie, B. ASc. Engineering Chemistry**
-James is an operations consultant with Stroud International, with a background in chemical engineering and chemistry. James has worked on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge
+> James is an operations consultant with Stroud International, with a background in chemical engineering and chemistry. James has worked > on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge
 
 - **Kal Radikov, B. ASc. Computer Engineering**
 
