@@ -4,11 +4,13 @@
 Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 # Bloomer: Early Warning System
-  * [And a table of contents](#and-a-table-of-contents)
-  * [On the right](#on-the-right)
+  * [What Are Algae Blooms](#what-are-algae-blooms)
+  * [Impact of Algae Blooms](#impact-of-algae-glooms)
 
 ## 1. What Are Algae Blooms?
 
-## 2. What Are Their Impact?
+## 2. Impact of Algae Blooms?
 
 ## 3. What Causes Algae Blooms?
+
+## References
