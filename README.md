@@ -5,10 +5,14 @@ Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-o
 
 # Bloomer: Early Warning System
   * [Meet the Team](#meet-the-team)
-  * [What Are Algae Blooms](#what-are-algae-blooms)
-  * [Impact of Algae Blooms](#impact-of-algae-glooms)
-  * [What Causes Algae Blooms](#what-causes-algae-blooms)
-  * [Bloomer: Early Warning System](#bloomer-early-warning-system)
+  * [1. What Are Algae Blooms?](#what-are-algae-blooms)
+  * [2. Impact of Algae Blooms](#impact-of-algae-glooms)
+  * [3. What Causes Algae Blooms?](#what-causes-algae-blooms)
+  * [4. Vision](#Vision)
+  * [5. Back End](#back-end)
+  * [6. Front End](#front-end)
+  * [7. Next Steps](#next-steps)
+  * [References](#references)
 
 ## Meet the Team
 **Aer Jay,**
@@ -24,11 +28,11 @@ James is an operations consultant with Stroud International, with a background i
 
 ## 1. What Are Algae Blooms?
 
-## 2. Impact of Algae Blooms?
+## 2. Impact of Algae Blooms
 
 ## 3. What Causes Algae Blooms?
 
-## 4. Bloomer: Early Warning System
+## 4. Vision
 
 ## 5. Back End
 
