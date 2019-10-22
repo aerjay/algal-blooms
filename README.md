@@ -1,5 +1,3 @@
-![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
-
 ## To Bloom or Not to Bloom, a NASA International Space App Challenge
 Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
@@ -15,19 +13,23 @@ Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-o
   * [References](#references)
 
 ## Meet the Team
+![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
 From Left to Right:
 - **Chi Nguyen, B.**
 >
 - **Aer Jay, B.**
->
+> 
 - **Benjamin Lee, B.**
->
+> 
 - **James Xie, B. ASc. Engineering Chemistry**
 > James is an operations consultant at Stroud International, with experience in both project management and engineering design in manufacturing and energy industries. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
 - **Kal Radikov, B. ASc. Computer Engineering**
->
+> 
 
 ## What Are Algae Blooms
+Algae blooms
+
+Harmful algae blooms (HABs) are 
 
 ## Impact of Algae Blooms
 
