@@ -3,15 +3,15 @@ Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 # Bloomer: Early Warning System
-  * [Meet the Team](#meet-the-team)
-  * [What Are Algae Blooms](#what-are-algae-blooms)
-  * [Impact of Algae Blooms](#impact-of-algae-glooms)
-  * [What Causes Algae Blooms](#what-causes-algae-blooms)
-  * [Vision](#Vision)
-  * [Back End](#back-end)
-  * [Front End](#front-end)
-  * [Next Steps](#next-steps)
-  * [References](#references)
+  1. [Meet the Team](#meet-the-team)
+  2. [What Are Algae Blooms](#what-are-algae-blooms)
+  3. [Impact of Algae Blooms](#impact-of-algae-glooms)
+  4. [What Causes Algae Blooms](#what-causes-algae-blooms)
+  5. [Vision](#Vision)
+  6. [Back End](#back-end)
+  7. [Front End](#front-end)
+  8. [Next Steps](#next-steps)
+  9. [References](#references)
 
 ## Meet the Team
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
@@ -34,8 +34,11 @@ Algae blooms
 
 ## Impact of Algae Blooms
 **1. Agriculture & Fishing**
+
 **2. Medical**
+
 **3. Tourism & Recreation**
+
 **4. Environmental**
 
 ## What Causes Algae Blooms
@@ -68,9 +71,9 @@ A subscription model was selected for government and research/private users seek
 ## References & Acknowledgements
 The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKeigan for helping research the topic.
 
-[1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
-[2]
-[3]
-[4]
-[5]
-[6]
+- [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
+- [2]
+- [3]
+- [4]
+- [5]
+- [6]
