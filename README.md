@@ -6,7 +6,7 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
   1. [Meet the Team](#meet-the-team)
   2. [What Are Algae Blooms](#what-are-algae-blooms)
   3. [Impact of Algae Blooms](#impact-of-algae-glooms)
-  4. [What Causes Algae Blooms](#what-causes-algae-blooms)
+  4. [Technical Background](#technical-background)
   5. [Vision](#Vision)
   6. [Back End](#back-end)
   7. [Front End](#front-end)
@@ -41,11 +41,18 @@ Algae blooms
 
 **4. Environmental**
 
-## What Causes Algae Blooms
-
+## Technical Background
+#### Cause of Algae Blooms
 ![variable analysis]("Variable analysis of algae blooms")
 
 Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be 
+
+#### Existing Models
+Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
+
+[2] Linear models, nutrition (P & N), temperature, water column stability, and forms of inorganic nitrogen. North American models are suitable for estimating total cyanobacterial biomass from any particular temperate region in Canada.
+
+However, significantly different regions (e.g. temperate Canada vs. southeast Asia) are not comparable
 
 ## Vision
 
@@ -68,7 +75,7 @@ A subscription model was selected for government and research/private users seek
 
 #### Space Segment
 
-## References & Acknowledgements
+## References
 The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKeigan for helping research the topic.
 
 - [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
