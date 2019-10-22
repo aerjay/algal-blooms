@@ -1,5 +1,6 @@
 ## To Bloom or Not to Bloom, a NASA International Space App Challenge
-Space Apps Project Page: https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
+Space Apps Project Page:
+https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 # Bloomer: Early Warning System
   * [Meet the Team](#meet-the-team)
@@ -29,9 +30,13 @@ From Left to Right:
 ## What Are Algae Blooms
 Algae blooms
 
-Harmful algae blooms (HABs) are 
+**Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing 
 
 ## Impact of Algae Blooms
+**1. Agriculture & Fishing**
+**2. Medical**
+**3. Tourism & Recreation**
+**4. Environmental**
 
 ## What Causes Algae Blooms
 
@@ -60,4 +65,12 @@ A subscription model was selected for government and research/private users seek
 
 #### Space Segment
 
-## References
+## References & Acknowledgements
+The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKeigan for helping research the topic.
+
+[1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
+[2]
+[3]
+[4]
+[5]
+[6]
