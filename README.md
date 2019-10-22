@@ -23,7 +23,7 @@ From Left to Right:
 - **Benjamin Lee, B.**
 >
 - **James Xie, B. ASc. Engineering Chemistry**
-> James is an operations consultant at Stroud International, with a background in chemical engineering and chemistry. James has worked on projects in remote sensing and astrobiology as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
+> James is an operations consultant at Stroud International, with experience in both project management and engineering design in manufacturing and energy industries. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
 - **Kal Radikov, B. ASc. Computer Engineering**
 >
 
@@ -35,7 +35,11 @@ From Left to Right:
 
 ![variable analysis]("Variable analysis of algae blooms")
 
+Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be 
+
 ## Vision
+
+A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 
 ## Back End
 #### Database
@@ -48,6 +52,7 @@ From Left to Right:
 #### Back End
 - [ ] Access to the MODIS-Aqua product to  
 - [ ] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
+> MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
 
 #### Front End
 
