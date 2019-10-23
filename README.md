@@ -11,13 +11,13 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
     4.2 [Existing Models](#existing-models)\
     4.3 [Existing Datasets](#existing-datasets)
   5. [Vision](#Vision)
-  6. [Back End](#back-end)
-    6.1 [Database](#database)
+  6. [Back End](#back-end)\
+    6.1 [Database](#database)\
     6.2 [Classification](#classification)
   7. [Front End](#front-end)
-  8. [Next Steps](#next-steps)
-    8.1 [Back End](#back-end)
-    8.2 [Front End](#front-end)
+  8. [Next Steps](#next-steps)\
+    8.1 [Prediction Model](#prediction-model)\
+    8.2 [User Segment](#user-segment)\
     8.3 [Space Segment](#space-segment)
   9. [References](#references)
 
@@ -85,21 +85,22 @@ MODIS has been successfully applied in monitoring blooms [1], however the spatia
 A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 
 ## Back End
-#### Database
+The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
 
 #### Classification
 
 ## Front End
 
 ## Next Steps
-#### Back End
-- [ ] Access to the MODIS-Aqua product to  
+#### Prediction Model
+- [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
+  - the Bloomer team currently only has access to the MODIS-Terra database which does not include large bodies of water and the spectral data has been normalized for land-based uses, resulting in limited image quality over water bodies of interest
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
   - ARIMA models may be used to project measured variables forward in time as inputs to the BRT
   - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
-#### Front End
+#### User Segment
 
 #### Space Segment
 
