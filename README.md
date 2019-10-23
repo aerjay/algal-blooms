@@ -25,15 +25,15 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
 From Left to Right:
 #### Chi Nguyen, B.
->Chi is a junior developer with Aucerna
+*Chi is a junior developer with Aucerna*
 #### Aer Jay, B.
-> RJ is a junior developer with Aucerna
+*RJ is a junior developer with Aucerna*
 #### Benjamin Lee, B.
-> Ben is a junior developer with Aucerna
+*Ben is a junior developer with Aucerna*
 #### James Xie, B. ASc. Engineering Chemistry
-  James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
+*James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*
 #### Kal Radikov, B. ASc. Computer Engineering
-> Kal is a senior developer with 
+*Kal is a senior developer with *
 
 ## What Are Algae Blooms
 Algae blooms
