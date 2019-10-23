@@ -6,9 +6,9 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
   1. [Meet the Team](#meet-the-team)
   2. [What Are Algae Blooms](#what-are-algae-blooms)
   3. [Impact of Algae Blooms](#impact-of-algae-blooms)
-  4. [Technical Background](#technical-background)
-      4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)
-      4.2 [Existing Models](#existing-models)
+  4. [Technical Background](#technical-background)\
+    4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
+    4.2 [Existing Models](#existing-models)\
   5. [Vision](#Vision)
   6. [Back End](#back-end)
   7. [Front End](#front-end)
