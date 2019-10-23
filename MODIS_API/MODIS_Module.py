@@ -34,9 +34,11 @@ modis_tile_extents = np.genfromtxt(modis_tile_extents_url,
                                    skip_header=7,
                                    skip_footer=3)
 
-modis_blob_service = BlockBlobService(account_name=modis_account_name, sas_token=modis_sas_url)
+modis_blob_service = BlockBlobService(account_name=modis_account_name,
+                                      sas_token=modis_sas_url)
 
 # %matplotlib inline
+
 
 def lat_lon_to_modis_tiles(lat, lon):
     """
@@ -64,7 +66,9 @@ def list_blobs_in_folder(container_name, folder_name):
     """
 
     files = []
-    generator = modis_blob_service.list_blobs(modis_container_name, prefix=folder_name, delimiter="")
+    generator = modis_blob_service.list_blobs(modis_container_name,
+                                              prefix=folder_name,
+                                              delimiter="")
     for blob in generator:
         files.append(blob.name)
     return files
@@ -134,6 +138,7 @@ np.clip(rgb, 0, 1, rgb)
 plt.imshow(rgb)
 plt.show()
 
+
 class DominantColors:
     CLUSTERS = None
     IMAGE = None
@@ -171,6 +176,7 @@ class DominantColors:
         # returning after converting to integer from float
         return self.COLORS.astype(int)
 
+
 colors = "Figure_1.png"
 clusters = 5
 dc = DominantColors(colors, clusters)
@@ -198,7 +204,5 @@ medianBlur = cv2.medianBlur(dc.IMAGE, 3)
 
 plt.imshow(medianBlur)
 plt.show()
-
-
 
 shutil.rmtree(modis_temp_path)
