@@ -50,7 +50,9 @@ Many key variables in algae growth can be either directly measured from remote s
 #### Existing Models
 Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
 
-[2] Linear models, nutrition (P & N), temperature, water column stability, and forms of inorganic nitrogen. North American models are suitable for estimating total cyanobacterial biomass from any particular temperate region in Canada.
+[3] Beaulieu et al. (2013) has shown that broad models across multiple water bodies are unable to explain much of the variation in cyanobacteria biomass, and multiple measurements throughout a growth season are needed to form adequate models within a region. As such, algal bloom prediction will likely need to be on the mesoscale/regional level
+
+[2] Linear models, nutrition (P & N), temperature, water column stability, and forms of inorganic nitrogen. North American models are suitable for estimating total cyanobacterial biomass from temperate region in Canada.
 
 However, significantly different regions (e.g. temperate Canada vs. southeast Asia) are not comparable
 
@@ -69,7 +71,8 @@ A subscription model was selected for government and research/private users seek
 #### Back End
 - [ ] Access to the MODIS-Aqua product to  
 - [ ] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
-> MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
+  - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
+  - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
 #### Front End
 
