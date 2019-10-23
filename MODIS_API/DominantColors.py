@@ -23,3 +23,4 @@ class DominantColors:
 
         # returning after converting to integer from float
         return self.COLORS.astype(int)
+        

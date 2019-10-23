@@ -55,3 +55,4 @@ def create_rgbwb_class_colors(class_colors):
     output_colors_arr, exempt_indices = assign_rgb(class_colors, [255, 0, 0], output_colors_arr, exempt_indices)
 
     return output_colors_arr
+    
