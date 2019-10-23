@@ -39,6 +39,7 @@ modis_tile_extents = np.genfromtxt(modis_tile_extents_url,
 modis_blob_service = BlockBlobService(account_name=modis_account_name,
                                       sas_token=modis_sas_url)
 
+
 # %matplotlib inline
 
 def lat_lon_to_modis_tiles(lat, lon):
@@ -129,6 +130,15 @@ def download_data_to_folder(product, lat, long, day_num, delete_on_finish):
 
 
 def show_modis_image():
+    image_data = get_modis_bands_array()
+
+    rgb = np.dstack((image_data[0], image_data[1], image_data[2]))
+    np.clip(rgb, 0, 1, rgb)
+    plt.imshow(rgb)
+    plt.show()
+
+
+def get_modis_bands_array():
     norm_value = 4000
     directory = modis_temp_path
     image_data = []
@@ -141,12 +151,9 @@ def show_modis_image():
         band_array = band_array / norm_value
         image_data.append(band_array)
 
-    rgb = np.dstack((image_data[0], image_data[1], image_data[2]))
-    np.clip(rgb, 0, 1, rgb)
-    plt.imshow(rgb)
-    plt.show()
+    return image_data
 
-#Todo: remove all commented code below into their own respective classes and call them in main.py
+# Todo: remove all commented code below into their own respective classes and call them in main.py
 #
 # class DominantColors:
 #     CLUSTERS = None
