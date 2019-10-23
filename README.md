@@ -1,9 +1,9 @@
-## To Bloom or Not to Bloom, a NASA International Space App Challenge
+### To Bloom or Not to Bloom, NASA International Space App 2019 Challenge
 Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 # Bloomer: Early Warning System
-#### Table of Contents
+## Table of Contents
   1. [Meet the Team](#meet-the-team)
   2. [What Are Algae Blooms](#what-are-algae-blooms)
   3. [Impact of Algae Blooms](#impact-of-algae-blooms)
@@ -49,27 +49,27 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 ## Impact of Algae Blooms
 Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
 
-#### 1. Agriculture & Fishing
+### 1. Agriculture & Fishing
 - 
 - These industries compose 10-50% of the GDP in many southeast asian countries, making algae blooms incredibly disruptive to local economies.
 
-#### 2. Medical
+### 2. Medical
 - Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
 
-#### 3. Tourism & Recreation
+### 3. Tourism & Recreation
 - Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
 
-#### 4. Environmental
+### 4. Environmental
 - Damage to ecosystems represents an externality however 
 
 ## Technical Background
-#### Cause of Algae Blooms
+### Cause of Algae Blooms
 ![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
 [2-8]
 
 Algae are not a group of related species, resulting in different responses to environmental conditions for growth. Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
 
-#### Existing Models
+### Existing Models
 Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
 
 [3] Beaulieu et al. (2013) has shown that broad models across multiple water bodies are unable to explain much of the variation in cyanobacteria biomass, and multiple measurements throughout a growth season are needed to form adequate models within a region. As such, algal bloom prediction will likely need to be on the mesoscale/regional level
@@ -83,7 +83,7 @@ However, significantly different regions (e.g. temperate Canada vs. southeast As
 
 [7] regional models exist but global ones do not. Models such as VEMALA [9] already exist for key predictors of algal populations
 
-#### Existing Datasets
+### Existing Datasets
 Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which is capable of imaging in the VIS-NIR (459 - 2155 nm) bands at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm.
 
 MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
@@ -97,12 +97,15 @@ A subscription model was selected for government and research/private users seek
 ## Back End
 The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
 
-#### Classification
+### Classification
+A KMeans classifier
+
+The spectral angle map (SAM) is used as the distance metric for classification
 
 ## Front End
 
 ## Next Steps
-#### Prediction Model
+### Prediction Model
 - [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
   - the Bloomer team currently only has access to the MODIS-Terra database which does not include large bodies of water and the spectral data has been normalized for land-based uses, resulting in limited image quality over water bodies of interest
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
@@ -110,9 +113,9 @@ The model used in the proof of concept will consist of only the MODIS-Terra data
   - ARIMA models may be used to project measured variables forward in time as inputs to the BRT
   - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
-#### User Segment
+### User Segment
 
-#### Space Segment
+### Space Segment
 
 ## References
 The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKeigan for helping research the topic.
