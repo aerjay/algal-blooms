@@ -7,7 +7,9 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
   2. [What Are Algae Blooms](#what-are-algae-blooms)
   3. [Impact of Algae Blooms](#impact-of-algae-blooms)
   4. [Technical Background](#technical-background)
-    4.1 [Causes of Algae Blooms](#causes-of-algae-blooms)
+  
+    4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)
+    4.2 [Existing Models](#existing-models)
   5. [Vision](#Vision)
   6. [Back End](#back-end)
   7. [Front End](#front-end)
@@ -17,15 +19,15 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 ## Meet the Team
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
 From Left to Right:
-**Chi Nguyen, B.**
+#### Chi Nguyen, B.
 >Chi is a junior developer with Aucerna
-**Aer Jay, B.**
+#### Aer Jay, B.
 > RJ is a junior developer with Aucerna
-**Benjamin Lee, B.**
+#### Benjamin Lee, B.
 > Ben is a junior developer with Aucerna
-**James Xie, B. ASc. Engineering Chemistry**
+#### James Xie, B. ASc. Engineering Chemistry
 > James is an operations consultant at Stroud International, with experience in project management and process engineering design. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
-**Kal Radikov, B. ASc. Computer Engineering**
+#### Kal Radikov, B. ASc. Computer Engineering
 > Kal is a senior developer with 
 
 ## What Are Algae Blooms
@@ -67,7 +69,9 @@ However, significantly different regions (e.g. temperate Canada vs. southeast As
 [7] regional models exist but global ones do not. Models such as VEMALA [9] already exist for key predictors of algal populations
 
 #### Existing Datasets
-Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which is capable of imaging in the VIS-NIR (459 - 2155 nm) bands at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm. MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
+Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which is capable of imaging in the VIS-NIR (459 - 2155 nm) bands at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm.
+
+MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
 
 ![map of ground data](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Ground%20Measurement%20Datasets.png "Global map of ground measurements")
 
