@@ -31,7 +31,7 @@ From Left to Right:
 #### Benjamin Lee, B.
 > Ben is a junior developer with Aucerna
 #### James Xie, B. ASc. Engineering Chemistry
-> James is an operations consultant at Stroud International, with experience in project management and process engineering design. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
+    James is an operations consultant at Stroud International, with experience in project management and process engineering design. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
 #### Kal Radikov, B. ASc. Computer Engineering
 > Kal is a senior developer with 
 
