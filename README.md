@@ -23,7 +23,7 @@ From Left to Right:
 - **Benjamin Lee, B.**
 > 
 - **James Xie, B. ASc. Engineering Chemistry**
-> James is an operations consultant at Stroud International, with experience in both project management and engineering design in manufacturing and energy industries. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
+> James is an operations consultant at Stroud International, with experience in project management and engineering design. James has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.
 - **Kal Radikov, B. ASc. Computer Engineering**
 > 
 
@@ -63,6 +63,8 @@ However, significantly different regions (e.g. temperate Canada vs. southeast As
 [4] Different cyanobacteria additionally have different responses to each variable, further limiting the applicability of a global model
 [5] forecasting models can be developed but will require lake-specific calibration to be effective risk-management tools
 
+[7] regional models exist but global ones do not. Models such as VEMALA [9] already exist for key predictors of algal populations
+
 ## Vision
 
 A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
@@ -77,8 +79,9 @@ A subscription model was selected for government and research/private users seek
 ## Next Steps
 #### Back End
 - [ ] Access to the MODIS-Aqua product to  
-- [ ] Training a boosted regression tree model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
+- [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
+  - ARIMA models may be used to project measured variables forward in time as inputs to the BRT
   - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
 #### Front End
@@ -96,7 +99,7 @@ The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKe
 - [6] J.-P. Descy, F. Leprieur, S. Pirlot, B. Leporcq, J. Van Wichelen, A. Peretyatko, S. Teissier, G.A. Codd, L. Triest, W. Vyverman, A. Wilmotte. Identifying the factors determining blooms of cyanobacteria in a set of shallow lakes. Ecological Informatics 34 (2016) 129–138
 - [7] Annette BG Janssen, Jan H Janse, Arthur HW Beusen, Manqi Chang, John A Harrison, Inese Huttunen, Xiangzhen Kong, Jasmijn Rost, Sven Teurlincx, Tineke A Troost, Dianneke van Wijk, and Wolf M Mooij. How to model algal blooms in any lake on earth. Current Opinion in Environmental Sustainability 2019, 36:1–10
 - [8] GERALD K. MOORE (1980) Satellite remote sensing of water turbidity / Sonde de télémesure par satellite de la turbidité de l'eau, Hydrological Sciences Bulletin, 25:4, 407-421, DOI: 10.1080/02626668009491950
-- [9]
+- [9] Huttunen, I., Huttunen, M., Piirainen, V. et al. Environ Model Assess (2016) 21: 83. https://doi.org/10.1007/s10666-015-9470-6
 - [10]
 - [11]
 - [12]
