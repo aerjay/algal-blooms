@@ -25,7 +25,7 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 ## Meet the Team
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
 From Left to Right:
-#### Chi Nguyen, B.
+**Chi Nguyen, B.**  
 *Chi is a junior developer with Aucerna*
 #### Aer Jay, B.
 *Aer Jay is a junior developer with Aucerna*
