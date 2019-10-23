@@ -24,41 +24,43 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 
 ## Meet the Team
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
-From Left to Right:
+From Left to Right:  
 **Chi Nguyen, B.**  
 *Chi is a junior developer with Aucerna*
-#### Aer Jay, B.
+**Aer Jay, B.**  
 *Aer Jay is a junior developer with Aucerna*
-#### Benjamin Lee, B.
+**Benjamin Lee, B.**  
 *Ben is a junior developer with Aucerna*
-#### James Xie, B. ASc. Engineering Chemistry
+**James Xie, B. ASc. Engineering Chemistry**  
 *James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*
-#### Kal Radikov, B. ASc. Computer Engineering
+**Kal Radikov, B. ASc. Computer Engineering**  
 *Kal is a senior developer with*
 
 ## What Are Algae Blooms
-Algae blooms are rapid growths of 
+Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This resuts in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
 
-**Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing 
+**Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 
 ## Impact of Algae Blooms
-Overall, algae blooms represent a multi-billion dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
+Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
 
 **1. Agriculture & Fishing**
 
 **2. Medical**
-Direct medical costs are incurred through treatment of 
+Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
 
 **3. Tourism & Recreation**
+Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
 
 **4. Environmental**
+Damage to ecosystems represents an externality however 
 
 ## Technical Background
 #### Cause of Algae Blooms
 ![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
 [2-8]
 
-Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
+Algae are not a group of related species, resulting in different responses to environmental conditions for growth. Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
 
 #### Existing Models
 Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
@@ -117,6 +119,6 @@ The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKe
 - [7] Annette BG Janssen, Jan H Janse, Arthur HW Beusen, Manqi Chang, John A Harrison, Inese Huttunen, Xiangzhen Kong, Jasmijn Rost, Sven Teurlincx, Tineke A Troost, Dianneke van Wijk, and Wolf M Mooij. How to model algal blooms in any lake on earth. Current Opinion in Environmental Sustainability 2019, 36:1–10
 - [8] GERALD K. MOORE (1980) Satellite remote sensing of water turbidity / Sonde de télémesure par satellite de la turbidité de l'eau, Hydrological Sciences Bulletin, 25:4, 407-421, DOI: 10.1080/02626668009491950
 - [9] Huttunen, I., Huttunen, M., Piirainen, V. et al. Environ Model Assess (2016) 21: 83. https://doi.org/10.1007/s10666-015-9470-6
-- [10]
-- [11]
+- [10] Florida Department of Health. Harmful Algal Blooms – Economic Impacts. pdf. 2008.
+- [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12]
