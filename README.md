@@ -25,14 +25,19 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 ## Meet the Team
 ![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
 From Left to Right:  
+
 **Chi Nguyen, B.**  
 *Chi is a junior developer with Aucerna*  
+
 **Aer Jay, B.**  
 *Aer Jay is a junior developer with Aucerna*  
+
 **Benjamin Lee, B.**  
 *Ben is a junior developer with Aucerna*  
+
 **James Xie, B. ASc. Engineering Chemistry**  
 *James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
+
 **Kal Radikov, B. ASc. Computer Engineering**  
 *Kal is a senior developer with*
 
@@ -45,15 +50,17 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
 
 #### 1. Agriculture & Fishing
+- 
+- These industries compose 10-50% of the GDP in many southeast asian countries, making algae blooms incredibly disruptive to local economies.
 
 #### 2. Medical
-Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
+- Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
 
 #### 3. Tourism & Recreation
-Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
+- Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
 
 #### 4. Environmental
-Damage to ecosystems represents an externality however 
+- Damage to ecosystems represents an externality however 
 
 ## Technical Background
 #### Cause of Algae Blooms
