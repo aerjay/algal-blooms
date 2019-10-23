@@ -9,10 +9,16 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
   4. [Technical Background](#technical-background)\
     4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
     4.2 [Existing Models](#existing-models)\
+    4.3 [Existing Datasets](#existing-datasets)
   5. [Vision](#Vision)
   6. [Back End](#back-end)
+    6.1 [Database](#database)
+    6.2 [Classification](#classification)
   7. [Front End](#front-end)
   8. [Next Steps](#next-steps)
+    8.1 [Back End](#back-end)
+    8.2 [Front End](#front-end)
+    8.3 [Space Segment](#space-segment)
   9. [References](#references)
 
 ## Meet the Team
