@@ -39,7 +39,7 @@ From Left to Right:
 *James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
 
 **Kal Radikov, B. ASc. Computer Engineering**  
-*Kal is a senior developer with*
+*Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
 
 ## What Are Algae Blooms
 Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This resuts in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
