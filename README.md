@@ -3,6 +3,7 @@ Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 # Bloomer: Early Warning System
+#### Table of Contents
   1. [Meet the Team](#meet-the-team)
   2. [What Are Algae Blooms](#what-are-algae-blooms)
   3. [Impact of Algae Blooms](#impact-of-algae-blooms)
@@ -27,16 +28,16 @@ From Left to Right:
 #### Chi Nguyen, B.
 *Chi is a junior developer with Aucerna*
 #### Aer Jay, B.
-*RJ is a junior developer with Aucerna*
+*Aer Jay is a junior developer with Aucerna*
 #### Benjamin Lee, B.
 *Ben is a junior developer with Aucerna*
 #### James Xie, B. ASc. Engineering Chemistry
 *James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*
 #### Kal Radikov, B. ASc. Computer Engineering
-*Kal is a senior developer with *
+*Kal is a senior developer with*
 
 ## What Are Algae Blooms
-Algae blooms
+Algae blooms are rapid growths of 
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing 
 
@@ -54,7 +55,7 @@ Direct medical costs are incurred through treatment of
 
 ## Technical Background
 #### Cause of Algae Blooms
-![variable analysis]("Variable analysis of algae blooms")
+![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
 [2-8]
 
 Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
