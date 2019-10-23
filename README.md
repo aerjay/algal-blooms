@@ -33,9 +33,12 @@ Algae blooms
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing 
 
 ## Impact of Algae Blooms
+Overall, algae blooms represent a multi-billion dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
+
 **1. Agriculture & Fishing**
 
 **2. Medical**
+Direct medical costs are incurred through treatment of 
 
 **3. Tourism & Recreation**
 
@@ -44,8 +47,9 @@ Algae blooms
 ## Technical Background
 #### Cause of Algae Blooms
 ![variable analysis]("Variable analysis of algae blooms")
+[2-8]
 
-Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be 
+Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
 
 #### Existing Models
 Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
@@ -55,6 +59,9 @@ Many models exist which predict the size of algae populations given a set of par
 [2] Linear models, nutrition (P & N), temperature, water column stability, and forms of inorganic nitrogen. North American models are suitable for estimating total cyanobacterial biomass from temperate region in Canada.
 
 However, significantly different regions (e.g. temperate Canada vs. southeast Asia) are not comparable
+
+[4] Different cyanobacteria additionally have different responses to each variable, further limiting the applicability of a global model
+[5] forecasting models can be developed but will require lake-specific calibration to be effective risk-management tools
 
 ## Vision
 
@@ -70,7 +77,7 @@ A subscription model was selected for government and research/private users seek
 ## Next Steps
 #### Back End
 - [ ] Access to the MODIS-Aqua product to  
-- [ ] Training a random forest model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
+- [ ] Training a boosted regression tree model for correlating hyperspectral images to key growth variables such as nitrogen and phosphorus concentration, surface temperature, and surface irradiance.
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
   - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
@@ -88,7 +95,7 @@ The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKe
 - [5] Anurani D. Persaud, Andrew M. Paterson, Peter J. Dillon, Jennifer G. Winter, Michelle Palmer, Keith M. Somers. Forecasting cyanobacteria dominance in Canadian temperate lakes. Journal of Environmental Management 151 (2015) 343e352
 - [6] J.-P. Descy, F. Leprieur, S. Pirlot, B. Leporcq, J. Van Wichelen, A. Peretyatko, S. Teissier, G.A. Codd, L. Triest, W. Vyverman, A. Wilmotte. Identifying the factors determining blooms of cyanobacteria in a set of shallow lakes. Ecological Informatics 34 (2016) 129–138
 - [7] Annette BG Janssen, Jan H Janse, Arthur HW Beusen, Manqi Chang, John A Harrison, Inese Huttunen, Xiangzhen Kong, Jasmijn Rost, Sven Teurlincx, Tineke A Troost, Dianneke van Wijk, and Wolf M Mooij. How to model algal blooms in any lake on earth. Current Opinion in Environmental Sustainability 2019, 36:1–10
-- [8]
+- [8] GERALD K. MOORE (1980) Satellite remote sensing of water turbidity / Sonde de télémesure par satellite de la turbidité de l'eau, Hydrological Sciences Bulletin, 25:4, 407-421, DOI: 10.1080/02626668009491950
 - [9]
 - [10]
 - [11]
