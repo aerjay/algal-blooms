@@ -101,16 +101,21 @@ The model used in the proof of concept will consist of only the MODIS-Terra data
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
 ### Prediction Algorithm
-A KMeans classifier
+Data from different sources must be conditioned and processed to estimate variables of interest:
+- satellite spectral data on different surfaces (e.g. land vs. water) will be used to estimate different parameters or discarded
+  - A KMeans classifier using the spectral bands and key band ratios is used to group regions of similar surfaces
+  - The spectral angle mapping (SAM) is used as the distance metric for grouping similar spectra [15]
+- ground-based measurements are combined with spectral estimates using a spatial-temporal Kalman filter [14]
 
-The spectral angle map (SAM) is used as the distance metric for classification
+These estimates are then included into a boosted regression tree to forecast the algae population. Due to the inherent uncertainty in model inputs and the model uncertainty due to the data resolution, an ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters. The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
 ![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram.png "system level diagram")
 
 ## Front End
+A web app 
 
 ```
-+ ![UML]( "UML")
++ user interface with the map and false colour image
 ```
 ## Next Steps
 ### Prediction Model
@@ -118,8 +123,7 @@ The spectral angle map (SAM) is used as the distance metric for classification
   - the Bloomer team currently only has access to the MODIS-Terra database which does not include large bodies of water and the spectral data has been normalized for land-based uses, resulting in limited image quality over water bodies of interest
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
-  - ARIMA models may be used to project measured variables forward in time as inputs to the BRT
-  - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
+- [ ] 
 ```
 + Image of complete predition algorithm
 ```
@@ -143,3 +147,5 @@ The spectral angle map (SAM) is used as the distance metric for classification
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
 - [13] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
+- [14] D. Yan, Q. Zhong and Y. Sui, "Spatial Kalman Filters and Spatial-Temporal Kalman Filters," 2014 12th International Conference on Signal Processing (ICSP), Hangzhou, 2014, pp. 1902-1905.
+- [15] Rashmi S, Swapna Addamani, Venkat, and Ravikiran S. Spectral Angle Mapper Algorithm for Remote Sensing Image Classification. IJISET - International Journal of Innovative Science, Engineering & Technology, Vol. 1 Issue 4, June 2014.
