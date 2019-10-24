@@ -1,6 +1,9 @@
-### To Bloom or Not to Bloom, NASA International Space App 2019 Challenge
+### To Bloom or Not to Bloom, NASA International Space Apps 2019 Challenge
 Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
+
+Link to our video:
+#### TBA
 
 # Bloomer: Early Warning System
 ## Table of Contents
@@ -46,11 +49,14 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 
+![Example Bloom](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg "Example Bloom")
+*Example of an algae bloom. Image taken from the National Centres for Coastal Ocean Science, Phytoplankton Monitoring Network (PMN) [12]*
+
 ## Impact of Algae Blooms
 Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
 
 ### 1. Agriculture & Fishing
-- 
+- Losses in the US amount to nearly $35 MM annually in fishing & agriculture industries [11]
 - These industries compose 10-50% of the GDP in many southeast asian countries, making algae blooms incredibly disruptive to local economies.
 
 ### 2. Medical
@@ -60,7 +66,7 @@ Overall, algae blooms represent a billion-dollar issue worldwide annually, and a
 - Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
 
 ### 4. Environmental
-- Damage to ecosystems represents an externality however 
+- Damage to ecosystems further cause indirect costs through decreased biodiversity, harm to endangered species, and formations of dead zones which are difficult to reverse.
 
 ## Technical Background
 ### Cause of Algae Blooms
@@ -131,4 +137,5 @@ The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKe
 - [9] Huttunen, I., Huttunen, M., Piirainen, V. et al. Environ Model Assess (2016) 21: 83. https://doi.org/10.1007/s10666-015-9470-6
 - [10] Florida Department of Health. Harmful Algal Blooms – Economic Impacts. pdf. 2008.
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
-- [12]
+- [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
+
