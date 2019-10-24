@@ -8,12 +8,12 @@ Link to our video:
 # Bloomer: Early Warning System
 ## Table of Contents
   1. [Meet the Team](#meet-the-team)
-  2. [What Are Algae Blooms](#what-are-algae-blooms)
-  3. [Impact of Algae Blooms](#impact-of-algae-blooms)
-  4. [Technical Background](#technical-background)\
-    4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
-    4.2 [Existing Models & Datasets](#existing-models-&-datasets)
-  5. [Vision](#Vision)
+  2. [Vision](#Vision)
+  3. [What Are Algae Blooms](#what-are-algae-blooms)
+  4. [Impact of Algae Blooms](#impact-of-algae-blooms)
+  5. [Technical Background](#technical-background)\
+    5.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
+    5.2 [Existing Models & Datasets](#existing-models-&-datasets)
   6. [Back End](#back-end)\
     6.1 [Database](#database)\
     6.2 [Classification](#classification)
@@ -45,6 +45,17 @@ From Left to Right:
 **Kal Radikov, B. ASc. Computer Engineering**  
 *Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
 
+## Vision
+Bloomer seeks to provide a service for alerting the public to aquatic events such as algae blooms which may pose a health risk
+
+Users can subscribe to a location and receive news
+
+Government, research, and private agencies interested in predicting algae bloom events 
+
+A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
+```
++ Image of UI
+```
 ## What Are Algae Blooms
 Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This resuts in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
 
@@ -79,31 +90,28 @@ Algae are not a group of related species, resulting in different responses to en
 ### Existing Models & Datasets
 Research models already exist at the regional level, however multiple measurements across a growth season are needed (environment is highly dynamic) and there have not been any successful global algal models [2,3,4,7]. Models for critical variables such as available nutrition also exist at the region level (such as VEMALA [9]) and can be integrated into regional-level algal models, however their applicability again is not universal. The level of specificity required in each region to produce a sufficiently accurate forecast model will require water-body-specific calibration [5].
 
-Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which provides image bands in the VIS-NIR (459 - 2155 nm) at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm. Each location is imaged once every 1-2 days.
-
-MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
+Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which provides image bands in the VIS-NIR (459 - 2155 nm) at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm. Each location is imaged once every 1-2 days. [13] MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution is insufficient for prediction alone and must be augmented with additional imaging capability and ground-based measurements [7]:
 
 ![map of ground data](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Ground%20Measurement%20Datasets.png "Global map of ground measurements")
 
-## Vision
-
-A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
+## Back End
+The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
 
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
-## Back End
-The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
-
 ### Classification
 A KMeans classifier
 
 The spectral angle map (SAM) is used as the distance metric for classification
-
+```
++ Image of classification algorithm
+```
 ## Front End
 
-![UML]( "UML")
-
+```
++ ![UML]( "UML")
+```
 ## Next Steps
 ### Prediction Model
 - [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
@@ -112,12 +120,14 @@ The spectral angle map (SAM) is used as the distance metric for classification
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
   - ARIMA models may be used to project measured variables forward in time as inputs to the BRT
   - Due to the inherent uncertainty in model inputs (estimated from satellite spectral measurements) and the model uncertainty due to the data resolution, an ensemble approach should be applied to the forecast by applying perturbations to model inputs as well as the model weights. The resultant Monte Carlo output may then be used as a probabalistic forecast.
-
+```
++ Image of complete predition algorithm
+```
 ### User Segment
+- [ ]
 
 ### Space Segment
-
-![UML]( "UML")
+- [ ]
 
 ## References
 - [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
@@ -132,4 +142,4 @@ The spectral angle map (SAM) is used as the distance metric for classification
 - [10] Florida Department of Health. Harmful Algal Blooms – Economic Impacts. pdf. 2008.
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
-- [12] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
+- [13] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
