@@ -26,7 +26,7 @@ Link to our video:
   9. [References](#references)
 
 ## Meet the Team
-![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg "Team Photo")
+![photo of Bloomer team](https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg&s=800)
 From Left to Right:  
 
 **Chi Nguyen, B.**  
