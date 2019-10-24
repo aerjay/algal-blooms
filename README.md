@@ -32,7 +32,7 @@ From Left to Right:
 **Chi Nguyen, B.**  
 *Chi is a junior developer with Aucerna*  
 
-**Aer Jay, B.**  
+**Aerjay Italia, B.**  
 *Aer Jay is a junior developer with Aucerna*  
 
 **Benjamin Lee, B.**  
