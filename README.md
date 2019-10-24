@@ -99,6 +99,8 @@ MODIS has been successfully applied in monitoring blooms [1], however the spatia
 
 A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 
+![app architecture](https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png "App architecture")
+
 ## Back End
 The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
 
@@ -108,6 +110,8 @@ A KMeans classifier
 The spectral angle map (SAM) is used as the distance metric for classification
 
 ## Front End
+
+![UML]( "UML")
 
 ## Next Steps
 ### Prediction Model
@@ -122,9 +126,9 @@ The spectral angle map (SAM) is used as the distance metric for classification
 
 ### Space Segment
 
-## References
-The Bloomer team would like to thank Anthony Tan, Allegra Pearce, and Paul MacKeigan for helping research the topic.
+![UML]( "UML")
 
+## References
 - [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
 - [2] Marieke Beaulieu, Frances Pick, Michelle Palmer, Sue Watson, Jenny Winter, Ron Zurawell, and Irene Gregory-Eaves. Comparing predictive cyanobacterial models from temperate regions. Can. J. Fish. Aquat. Sci. 71: 1830–1839 (2014)
 - [3] Marieke Beaulieu, Frances Pick, and Irene Gregory-Eaves. Nutrients and water temperature are significant predictors of cyanobacterial biomass in a 1147 lakes data set. Limnol. Oceanogr., 58(5), 2013, 1736–1746
