@@ -15,8 +15,7 @@ Link to our video:
     5.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
     5.2 [Existing Models & Datasets](#existing-models-&-datasets)
   6. [Back End](#back-end)\
-    6.1 [Database](#database)\
-    6.2 [Classification](#classification)
+    6.1 [Prediction Algorithm](#prediction-algorithm)
   7. [Front End](#front-end)
   8. [Next Steps](#next-steps)\
     8.1 [Prediction Model](#prediction-model)\
@@ -62,7 +61,8 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg" width="400">
-</p>\
+</p>
+
 *Example of an algae bloom. Image taken from the National Centres for Coastal Ocean Science, Phytoplankton Monitoring Network (PMN) [12]*
 
 ## Impact of Algae Blooms
@@ -100,13 +100,13 @@ The model used in the proof of concept will consist of only the MODIS-Terra data
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
-### Classification
+### Prediction Algorithm
 A KMeans classifier
 
 The spectral angle map (SAM) is used as the distance metric for classification
-```
-+ Image of classification algorithm
-```
+
+![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram.png "system level diagram")
+
 ## Front End
 
 ```
