@@ -25,7 +25,9 @@ Link to our video:
   9. [References](#references)
 
 ## Meet the Team
+<p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg" width="600">
+</p>
 From Left to Right:  
 
 **Chi Nguyen, B.**  
@@ -47,8 +49,9 @@ From Left to Right:
 Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This resuts in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
-
-<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg" width="400">\
+<p align="center">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg" width="400">
+</p>\
 *Example of an algae bloom. Image taken from the National Centres for Coastal Ocean Science, Phytoplankton Monitoring Network (PMN) [12]*
 
 ## Impact of Algae Blooms
@@ -76,7 +79,7 @@ Algae are not a group of related species, resulting in different responses to en
 ### Existing Models & Datasets
 Research models already exist at the regional level, however multiple measurements across a growth season are needed (environment is highly dynamic) and there have not been any successful global algal models [2,3,4,7]. Models for critical variables such as available nutrition also exist at the region level (such as VEMALA [9]) and can be integrated into regional-level algal models, however their applicability again is not universal. The level of specificity required in each region to produce a sufficiently accurate forecast model will require water-body-specific calibration [5].
 
-Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which is capable of imaging in the VIS-NIR (459 - 2155 nm) bands at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm.
+Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which provides image bands in the VIS-NIR (459 - 2155 nm) at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm. Each location is imaged once every 1-2 days.
 
 MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
 
@@ -86,8 +89,9 @@ MODIS has been successfully applied in monitoring blooms [1], however the spatia
 
 A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 
+<p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
-
+</p>
 ## Back End
 The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
 
@@ -128,4 +132,4 @@ The spectral angle map (SAM) is used as the distance metric for classification
 - [10] Florida Department of Health. Harmful Algal Blooms – Economic Impacts. pdf. 2008.
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
-
+- [12] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
