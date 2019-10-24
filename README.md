@@ -39,7 +39,7 @@ From Left to Right:
 *Ben is a junior developer with Aucerna*  
 
 **James Xie, B. ASc. Engineering Chemistry**  
-*James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has designed remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
+*James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
 
 **Kal Radikov, B. ASc. Computer Engineering**  
 *Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
@@ -49,7 +49,7 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 
-![Example Bloom](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg "Example Bloom")
+![Example Bloom](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg "Example Bloom")\
 *Example of an algae bloom. Image taken from the National Centres for Coastal Ocean Science, Phytoplankton Monitoring Network (PMN) [12]*
 
 ## Impact of Algae Blooms
@@ -70,10 +70,9 @@ Overall, algae blooms represent a billion-dollar issue worldwide annually, and a
 
 ## Technical Background
 ### Cause of Algae Blooms
-![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
-[2-8]
+Algae are not a group of related species, resulting in different responses to environmental conditions for growth. A variable analysis conducted through a literature search (below) has identified multiple key variables in algae growth which can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body. [2-8]
 
-Algae are not a group of related species, resulting in different responses to environmental conditions for growth. Many key variables in algae growth can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body.
+![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
 
 ### Existing Models
 Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
