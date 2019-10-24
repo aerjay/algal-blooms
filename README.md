@@ -26,7 +26,7 @@ Link to our video:
   9. [References](#references)
 
 ## Meet the Team
-<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg" width="800">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/74575087_2493828480873329_4569868799494324224_n.jpg" width="600">
 From Left to Right:  
 
 **Chi Nguyen, B.**  
@@ -49,7 +49,7 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 
-![Example Bloom](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg "Example Bloom")\
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloom1.jpg" width="400">\
 *Example of an algae bloom. Image taken from the National Centres for Coastal Ocean Science, Phytoplankton Monitoring Network (PMN) [12]*
 
 ## Impact of Algae Blooms
@@ -99,7 +99,7 @@ MODIS has been successfully applied in monitoring blooms [1], however the spatia
 
 A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 
-![app architecture](https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png "App architecture")
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 
 ## Back End
 The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
