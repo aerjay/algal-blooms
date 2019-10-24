@@ -3,7 +3,7 @@ Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
 Link to our video:
-#### TBA
+**TBA**
 
 # Bloomer: Early Warning System
 ## Table of Contents
@@ -12,8 +12,7 @@ Link to our video:
   3. [Impact of Algae Blooms](#impact-of-algae-blooms)
   4. [Technical Background](#technical-background)\
     4.1 [Cause of Algae Blooms](#cause-of-algae-blooms)\
-    4.2 [Existing Models](#existing-models)\
-    4.3 [Existing Datasets](#existing-datasets)
+    4.2 [Existing Models & Datasets](#existing-models-&-datasets)
   5. [Vision](#Vision)
   6. [Back End](#back-end)\
     6.1 [Database](#database)\
@@ -70,25 +69,13 @@ Overall, algae blooms represent a billion-dollar issue worldwide annually, and a
 
 ## Technical Background
 ### Cause of Algae Blooms
-Algae are not a group of related species, resulting in different responses to environmental conditions for growth. A variable analysis conducted through a literature search (below) has identified multiple key variables in algae growth which can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body. [2-8]
+Algae are not a group of related species, resulting in different responses to environmental conditions for growth [4]. A variable analysis conducted through a literature search (below) has identified multiple key variables in algae growth which can be either directly measured from remote sensing satellites (blue) or estimated from spectral image data (orange). However, some must still be measured directly (brown) and are critical for calibrating a model for a particular water body. [2-8]
 
 ![variable analysis](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Variable%20analysis.png "Variable analysis of algae blooms")
 
-### Existing Models
-Many models exist which predict the size of algae populations given a set of parameters, however they do not predict when the explosive growth of an algal bloom will occur in a water body. additionally, most studies are concentrated in a particular region and while some models can be extended to multiple regions with similar environments, there is no globally applicable model yet.
+### Existing Models & Datasets
+Research models already exist at the regional level, however multiple measurements across a growth season are needed (environment is highly dynamic) and there have not been any successful global algal models [2,3,4,7]. Models for critical variables such as available nutrition also exist at the region level (such as VEMALA [9]) and can be integrated into regional-level algal models, however their applicability again is not universal. The level of specificity required in each region to produce a sufficiently accurate forecast model will require water-body-specific calibration [5].
 
-[3] Beaulieu et al. (2013) has shown that broad models across multiple water bodies are unable to explain much of the variation in cyanobacteria biomass, and multiple measurements throughout a growth season are needed to form adequate models within a region. As such, algal bloom prediction will likely need to be on the mesoscale/regional level
-
-[2] Linear models, nutrition (P & N), temperature, water column stability, and forms of inorganic nitrogen. North American models are suitable for estimating total cyanobacterial biomass from temperate region in Canada.
-
-However, significantly different regions (e.g. temperate Canada vs. southeast Asia) are not comparable
-
-[4] Different cyanobacteria additionally have different responses to each variable, further limiting the applicability of a global model
-[5] forecasting models can be developed but will require lake-specific calibration to be effective risk-management tools
-
-[7] regional models exist but global ones do not. Models such as VEMALA [9] already exist for key predictors of algal populations
-
-### Existing Datasets
 Remote sensing multispectral images of the earth are readily available through NASA's Moderate-Resolution Imaging Spectroradiometer (MODIS) which is capable of imaging in the VIS-NIR (459 - 2155 nm) bands at a spatial resolution of 250-500 m and spectral resolution of 20-50 nm.
 
 MODIS has been successfully applied in monitoring blooms [1], however the spatial/temporal resolution and capability is insufficient for prediction alone and must be augmented with ground-based measurements [7]:
