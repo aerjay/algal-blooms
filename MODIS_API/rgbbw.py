@@ -1,3 +1,5 @@
+import cv2
+
 def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     """
     Matches a closest RGB value from a source and maps it onto an output array and records its index
@@ -39,8 +41,8 @@ def create_rgbwb_class_colors(class_colors):
     @Param: class_colors - Classifier output, must be 2D array with 
     [5][3] dimensions [[R, G, B],...]
     @Return:  - Array of length 5 which will contain values of color classification"""
-    if len(class_colors) != 5:
-        return
+    # if len(class_colors) != 5:
+    #     return
 
     # Initialize arrays
     output_colors_arr = init_class_array()
@@ -62,6 +64,12 @@ def create_rgbwb_class_colors(class_colors):
     output_colors_arr, exempt_indices = assign_rgb(class_colors, [255, 0, 0], output_colors_arr, exempt_indices)
 
     return output_colors_arr
+
+def test(input_image, labels, colors):
+    cv2.medianBlur(input_image, 3)
+    for i in range(len(input_image)):
+        input_image[i] = colors[labels[i]]
+    return input_image
 
 # Use Example
 # TEST_ARRAY = [[255,255,255, 2],[25,255,25, 0],[1,1,1, 0],[255,25,25, 0],[25,25,255, 0]]

@@ -2,7 +2,6 @@ import os
 import numpy as np
 from pathlib import Path
 import matplotlib.pyplot as plt
-from PIL import Image
 
 ROOT_DIR = os.path.dirname(
     os.path.abspath(__file__))  # This is your Project Root
@@ -10,6 +9,10 @@ IMG_DIR = Path("../pictures/test/")  # relative path from ROOT_DIR
 FILE_EXT = ".tiff"
 EXT_LENGTH = 5
 
+
+def show_image(img):
+    plt.imshow(img)
+    plt.show()
 
 def calculate_ratios(file_name_1, file_name_2):
 
@@ -51,6 +54,19 @@ def ndvi_calculation(arr1, arr2, save_file):
     np.save(save_file, div_arr)
     #load_print_file("img1-img2")
 
+def ndvi_calculation(arr1, arr2):
+    """
+        Calculates the R/G ratios using the NDVI formula:
+        NDVI = (Band 1 - Band 5) / (Band 1 + Band 5)
+    """
+
+    sub_arr = np.subtract(arr1, arr2)
+    add_arr = np.add(arr1, arr2)
+    div_arr = np.divide(sub_arr, add_arr)
+
+    return div_arr
+    # load_print_file("img1-img2")
+
 
 def load_print_file(file):
     """ 
@@ -64,4 +80,4 @@ def load_print_file(file):
 
 
 ### Function call ###
-calculate_ratios("img1", "img2")
+# calculate_ratios("img1", "img2")
