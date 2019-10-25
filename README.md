@@ -45,13 +45,8 @@ From Left to Right:
 *Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
 
 ## Vision
-Bloomer seeks to provide a service for alerting the public to aquatic events such as algae blooms which may pose a health risk
+Bloomer seeks to provide a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom event forecasting may use a paid subscription to a region to access the predictive models. The prediction model will receive data from satellite images (NASA MODIS) and ground-based measurements.
 
-Users can subscribe to a location and receive news
-
-Government, research, and private agencies interested in predicting algae bloom events 
-
-A subscription model was selected for government and research/private users seeking predictive functionality since a new model must be 
 ```
 + Image of UI
 ```
