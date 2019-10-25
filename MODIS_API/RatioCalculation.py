@@ -29,14 +29,12 @@ def calculate_ratios(file_name_1, file_name_2):
 
 def generate_file_path(file):
     """ Returns the path to the given file """
-
     path = ROOT_DIR / IMG_DIR / (file + ".tiff")
     return path
 
 
 def generate_save_name(file1, file2):
     """ Returns a name for the save file of the calculation results """
-
     save_file = file1 + '_' + file2
     return save_file
 
