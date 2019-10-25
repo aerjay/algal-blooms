@@ -90,7 +90,9 @@ Remote sensing multispectral images of the earth are readily available through N
 ![map of ground data](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Ground%20Measurement%20Datasets.png "Global map of ground measurements")
 
 ## Back End
-The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model).
+The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model) and classify regions in the image as bare rock/soil, vegetation on land, water, and snow/ice/clouds.
+
+The averate atmospherically resistant vegetation index (ARVI) in water-classified regions 
 
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
