@@ -1,24 +1,21 @@
-"""LEAVE ME ALONE PYLINTER"""
 from sklearn.cluster import KMeans
 
 def create_labels_colors(input_image, clusters=5):
     """
-    Create labels and colors array from k-means classifier
-    @param: input_image - Receives a 2D array representation of an image in the form of 
-    [x*y][R,G,B,G/R]
+    Receive a image and groups the colours in the image into n = 5 (default) buckets using K-Means
+    @param: input_image - Receives a 2D array representation of an image in the form of (layers, x,y)
     @param: clusters - Defines amount of clusters desired for kmeans classification
-    @return: colors_array, classification array of length clusters OR empty array on failure
-    @return: labels_array, array of category of input array OR empty array on failure
+    @return: colors_array, length 'clusters' array of (1,layers) vectors representing the classifications OR empty array on failure
+    @return: labels_array, (1,x,y) image assigning each pixel to a colour classification OR empty array on failure
     """
-    # if (not isinstance(clusters, int) or not isinstance(input_image, list)):
-    #     return ([], [])
+    reshaped_img = input_image.reshape((input_image.shape[0], input_image.shape[1] * input_image.shape[2]))
 
-    kmeans = KMeans(clusters)
-    kmeans.fit(input_image)
+    kmeans = KMeans(clusters, precompute_distances=True).fit(reshaped_image)
 
     colors_array = kmeans.cluster_centers_.astype(int)
 
     labels_array = kmeans.labels_
+    labels_array = labels_array.reshape(((input_image.shape[0], input_image.shape[1], input_image.shape[2])))
 
     return (colors_array, labels_array)
     
