@@ -39,13 +39,13 @@ From Left to Right:
 *Ben is a junior developer with Aucerna*  
 
 **James Xie, B. ASc. Engineering Chemistry**  
-*James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
+*James is an operations consultant at Stroud International, with experience in project management and process design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the SEDS Canada CAN-SBX Challenge.*  
 
 **Kal Radikov, B. ASc. Computer Engineering**  
-*Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
+*Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in software design. Kal has worked on two hackathon projects including foldable oragami wheels to be used on Mars rovers and an online machine learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
 
 ## Vision
-Bloomer seeks to provide a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom event forecasting may use a paid subscription to a region to access the predictive models. The prediction model will receive data from satellite images (NASA MODIS) and ground-based measurements.
+Bloomer is a web app that provides a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom events may also subscribe to a region to access forecasting and predictive models which receive data from satellite images (NASA MODIS) and ground-based measurements.
 
 ```
 + Image of UI
@@ -62,17 +62,13 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 
 ## Impact of Algae Blooms
 Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
-
 ### 1. Agriculture & Fishing
 - Losses in the US amount to nearly $35 MM annually in fishing & agriculture industries [11]
 - These industries compose 10-50% of the GDP in many southeast asian countries, making algae blooms incredibly disruptive to local economies.
-
 ### 2. Medical
 - Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
-
 ### 3. Tourism & Recreation
 - Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
-
 ### 4. Environmental
 - Damage to ecosystems further cause indirect costs through decreased biodiversity, harm to endangered species, and formations of dead zones which are difficult to reverse.
 
@@ -123,10 +119,12 @@ A web app
 - [ ] 
 
 ### User Segment
-- [ ]
+- [ ] 
+- [ ] Pull local water quality news for public users seeking awareness of health risks in their area
 
 ### Space Segment
-- [ ]
+- [ ] Increase spatial and temporal resolution of remote sensing data.
+  - Frequent (2-3/day) imaging of equatorial regions (e.g. Southeast Asia) is difficult without either a constellation of sun-synchronous or near-equatorial orbiting satellites. To lower the cost, many researchers are now proposing SmallSat/CubeSat missions to fill this gap. Bloomer would seek to raise awareness and support for these initiatives to further improve its services
 
 ## References
 - [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
