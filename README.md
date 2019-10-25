@@ -29,8 +29,8 @@ Link to our video:
 </p>
 From Left to Right:  
 
-**Chi Nguyen, B.**  
-*Chi is a junior developer with Aucerna*  
+**Chi Nguyen, B. Sc Computer Science, B. Sc Biological Science**  
+*Chi is a junior developer with Aucerna, with experience in software development and design. This is Chi's first time participating in a hackathon and was very interested in the topic that combined both her fields of study. In her free time she is an avid fitness enthusiast who enjoys strengh training and playing soccer*  
 
 **Aerjay Italia, B.**  
 *Aer Jay is a junior developer with Aucerna*  
