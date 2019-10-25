@@ -92,11 +92,12 @@ Remote sensing multispectral images of the earth are readily available through N
 ## Back End
 The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model) and classify regions in the image as bare rock/soil, vegetation on land, water, and snow/ice/clouds.
 
-The averate atmospherically resistant vegetation index (ARVI) in water-classified regions 
+The averate atmospherically resistant vegetation index (ARVI) in water-classified pixels is averaged for that region and shown over time as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
 
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
+
 ### Prediction Algorithm
 Data from different sources must be conditioned and processed to estimate variables of interest:
 - satellite spectral data on different surfaces (e.g. land vs. water) will be used to estimate different parameters or discarded
