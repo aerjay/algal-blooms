@@ -20,9 +20,10 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 # MODIS_Module.show_modis_image()
 
 # chi's code - calculate ratios(rgb) -> output 2400 x 2400 x 5
-ndvi_band = RatioCalculation.ndvi_calculation(rgb[0], rgb[1])
+ndvi_band = RatioCalculation.ndvi_calculation(rgb[1], rgb[0]) #pass in red, IR
+evi_band = RatioCalculation.evi_calculation(rgb[2], rgb[1], rgb[0]) #pass in blue, red, IR
 rgb.append(ndvi_band)
-rgb.append(ndvi_band)
+rgb.append(evi_band)
 # evi_band = RatioCalculation.evi_calculation(rgb[0], rgb[1])
 # rgb.append(evi_band)
 # [0] is r band
