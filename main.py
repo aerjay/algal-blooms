@@ -24,11 +24,10 @@ ndvi_band = RatioCalculation.ndvi_calculation(rgb[1], rgb[0]) #pass in red, IR
 evi_band = RatioCalculation.evi_calculation(rgb[2], rgb[1], rgb[0]) #pass in blue, red, IR
 rgb.append(ndvi_band)
 rgb.append(evi_band)
-# evi_band = RatioCalculation.evi_calculation(rgb[0], rgb[1])
-# rgb.append(evi_band)
-# [0] is r band
-# [1] is g band
-# [2] is b band
+
+# [0] is IR band
+# [1] is Red band
+# [2] is Blue band
 # [3] is a ratio band NDVI
 # [4] is a ratio band EVI
 
@@ -37,8 +36,8 @@ rgb = np.array(rgb)
 rgb.reshape((rgb.shape[0], rgb.shape[1] * rgb.shape[2]))
 
 # bens code - k_means_method.create_labels_colors(reshaped array)
-colours, labels = k_means_method.create_labels_colors(rgb)
 # returns colours, labels
+colours, labels = k_means_method.create_labels_colors(rgb)
 
 # rgb = rgbbw.create_rgbwb_class_colors(colours)
 rgb = rgbbw.create_rgbwb_class_colors(colours)
