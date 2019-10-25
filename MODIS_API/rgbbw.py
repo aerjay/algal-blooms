@@ -66,10 +66,13 @@ def create_rgbwb_class_colors(class_colors):
     return output_colors_arr
 
 def apply_median_blur(input_image, labels, colors):
+    #blur to get rid of salt + pepper noise
     medianBlur = cv2.medianBlur(input_image, 3)
-    for i in range(len(input_image)):
-        input_image[i] = colors[labels[i]]
-    return input_image
+
+    # paint by colours
+    for i in range(len(medianBlur)):
+        medianBlur[i] = colors[labels[i]]
+    return medianBlur
 
 # Use Example
 # TEST_ARRAY = [[255,255,255, 2],[25,255,25, 0],[1,1,1, 0],[255,25,25, 0],[25,25,255, 0]]

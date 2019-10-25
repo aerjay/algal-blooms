@@ -20,11 +20,7 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 # MODIS_Module.show_modis_image()
 
 # chi's code - calculate ratios(rgb) -> output 2400 x 2400 x 5
-ndvi_band = RatioCalculation.ndvi_calculation(rgb[1], rgb[0]) #pass in red, IR
-evi_band = RatioCalculation.evi_calculation(rgb[2], rgb[1], rgb[0]) #pass in blue, red, IR
-rgb.append(ndvi_band)
-rgb.append(evi_band)
-
+rgb = RatioCalculation.add_ratio_bands(rgb)
 # [0] is IR band
 # [1] is Red band
 # [2] is Blue band
@@ -32,7 +28,6 @@ rgb.append(evi_band)
 # [4] is a ratio band EVI
 
 # reshape 5 (z) x 2400 (x) x 2400 (y)  to [z, x*y]
-rgb = np.array(rgb)
 rgb = rgb.reshape((rgb.shape[0], rgb.shape[1] * rgb.shape[2]))
 
 # bens code - k_means_method.create_labels_colors(reshaped array)

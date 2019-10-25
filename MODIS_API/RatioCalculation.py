@@ -14,8 +14,8 @@ def show_image(img):
     plt.imshow(img)
     plt.show()
 
-def calculate_ratios(file_name_1, file_name_2):
 
+def calculate_ratios(file_name_1, file_name_2):
     file_1 = generate_file_path(file_name_1)
     file_2 = generate_file_path(file_name_2)
 
@@ -50,7 +50,8 @@ def ndvi_calculation(arr1, arr2, save_file):
     div_arr = np.divide(sub_arr, add_arr)
 
     np.save(save_file, div_arr)
-    #load_print_file("img1-img2")
+    # load_print_file("img1-img2")
+
 
 def ndvi_calculation(arr1, arr2):
     """
@@ -63,7 +64,7 @@ def ndvi_calculation(arr1, arr2):
     div_arr = np.divide(sub_arr, add_arr)
 
     return div_arr
-    # load_print_file("img1-img2")
+
 
 def evi_calculation(blue, red, infrared):
     """
@@ -71,15 +72,26 @@ def evi_calculation(blue, red, infrared):
         EVI = 2.5*(Red - IR)/(Red + 6*IR - 7.5*Blue + 1)
     """
     num_arr = np.subtract(red, infrared)
-    
-    d1_arr = np.add(red, 6*infrared)
-    d2_arr = np.add(-7.5*blue, np.ones(blue.shape, dtype = float))
+
+    d1_arr = np.add(red, 6 * infrared)
+    d2_arr = np.add(-7.5 * blue, np.ones(blue.shape, dtype=float))
     denom_arr = np.add(d1_arr, d2_arr)
-    
-    EVI_arr = 2.5*np.divide(num_arr, denom_arr)
+
+    EVI_arr = 2.5 * np.divide(num_arr, denom_arr)
 
     return EVI_arr
-    
+
+
+def add_ratio_bands(rgb):
+    ndvi_band = ndvi_calculation(rgb[1], rgb[0])  # pass in red, IR
+    evi_band = evi_calculation(rgb[2], rgb[1], rgb[0])  # pass in blue, red, IR
+    rgb.append(ndvi_band)
+    rgb.append(evi_band)
+
+    # return a numpy array instead of a list
+    return np.array(rgb)
+
+
 def load_print_file(file):
     """ 
         loads and prints a given .npy file 
@@ -89,7 +101,6 @@ def load_print_file(file):
     infile = np.load(file + ".npy")
     print(file + ' ')
     print(infile)
-
 
 ### Function call ###
 # calculate_ratios("img1", "img2")
