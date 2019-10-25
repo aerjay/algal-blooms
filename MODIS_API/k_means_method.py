@@ -10,8 +10,8 @@ def create_labels_colors(input_image, clusters=5):
     @return: colors_array, classification array of length clusters OR empty array on failure
     @return: labels_array, array of category of input array OR empty array on failure
     """
-    if (not isinstance(clusters, int) or not isinstance(input_image, list)):
-        return ([], [])
+    # if (not isinstance(clusters, int) or not isinstance(input_image, list)):
+    #     return ([], [])
 
     kmeans = KMeans(clusters)
     kmeans.fit(input_image)

@@ -65,8 +65,8 @@ def create_rgbwb_class_colors(class_colors):
 
     return output_colors_arr
 
-def test(input_image, labels, colors):
-    cv2.medianBlur(input_image, 3)
+def apply_median_blur(input_image, labels, colors):
+    medianBlur = cv2.medianBlur(input_image, 3)
     for i in range(len(input_image)):
         input_image[i] = colors[labels[i]]
     return input_image

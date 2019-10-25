@@ -33,7 +33,7 @@ rgb.append(evi_band)
 
 # reshape 5 (z) x 2400 (x) x 2400 (y)  to [z, x*y]
 rgb = np.array(rgb)
-rgb.reshape((rgb.shape[0], rgb.shape[1] * rgb.shape[2]))
+rgb = rgb.reshape((rgb.shape[0], rgb.shape[1] * rgb.shape[2]))
 
 # bens code - k_means_method.create_labels_colors(reshaped array)
 # returns colours, labels
@@ -44,7 +44,7 @@ rgb = rgbbw.create_rgbwb_class_colors(colours)
 
 # blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)
-rgb = rgbbw.test(rgb, labels, colours)
+rgb = rgbbw.apply_median_blur(rgb, labels, colours)
 #  resize image to 5 x 2400 x 2400
 
 medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
