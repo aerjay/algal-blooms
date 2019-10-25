@@ -32,7 +32,7 @@ From Left to Right:
 **Chi Nguyen, B.**  
 *Chi is a junior developer with Aucerna*  
 
-**Aer Jay, B.**  
+**Aerjay Italia, B.**  
 *Aer Jay is a junior developer with Aucerna*  
 
 **Benjamin Lee, B.**  
@@ -103,8 +103,7 @@ The model used in the proof of concept will consist of only the MODIS-Terra data
 ### Prediction Algorithm
 Data from different sources must be conditioned and processed to estimate variables of interest:
 - satellite spectral data on different surfaces (e.g. land vs. water) will be used to estimate different parameters or discarded
-  - A KMeans classifier using the spectral bands and key band ratios is used to group regions of similar surfaces
-  - The spectral angle mapping (SAM) is used as the distance metric for grouping similar spectra [15]
+  - A KMeans classifier using the spectral bands and key band ratios (NDVI and EVI) is used to group regions of similar surfaces
 - ground-based measurements are combined with spectral estimates using a spatial-temporal Kalman filter [14]
 
 These estimates are then included into a boosted regression tree to forecast the algae population. Due to the inherent uncertainty in model inputs and the model uncertainty due to the data resolution, an ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters. The resultant Monte Carlo output may then be used as a probabalistic forecast.
@@ -124,9 +123,7 @@ A web app
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
 - [ ] 
-```
-+ Image of complete predition algorithm
-```
+
 ### User Segment
 - [ ]
 
