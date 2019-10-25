@@ -65,7 +65,21 @@ def ndvi_calculation(arr1, arr2):
     return div_arr
     # load_print_file("img1-img2")
 
+def evi_calculation(blue, red, infrared):
+    """
+        Calculates the Enhanced Vegetation Index:
+        EVI = 2.5*(Red - IR)/(Red + 6*IR - 7.5*Blue + 1)
+    """
+    num_arr = np.subtract(red, infrared)
+    
+    d1_arr = np.add(red, 6*infrared)
+    d2_arr = np.add(-7.5*blue, np.ones(blue.shape, dtype = float))
+    denom_arr = np.add(d1_arr, d2_arr)
+    
+    EVI_arr = 2.5*np.divide(num_arr, denom_arr)
 
+    return EVI_arr
+    
 def load_print_file(file):
     """ 
         loads and prints a given .npy file 
