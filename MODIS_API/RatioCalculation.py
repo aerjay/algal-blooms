@@ -54,14 +54,18 @@ def ndvi_calculation(arr1, arr2, save_file):
 
 def evi_calculation(band1, band3, band5, band6):
 
-    """ Does the EVI calculation"""
+    """ 
+        Does ratio calculation using the EVI formula
+        EVI = 2.5 * (Band1-Band5) / (Band1 + (6 * Band5) - (7.5 * Band3) + 1)
+    """
+
     # create arrays of same shape to do the operations with
     a1 = np.full((2400, 2400, 4), 1)
     a2 = np.full((2400, 2400, 4), 2.5)
     a6 = np.full((2400, 2400, 4), 6)
     a7 = np.full((2440, 2400, 4), 7.5)
 
-    # caclulating: band1 - band5
+    # caclulating: (band1 - band5)
     num = np.substract(band1, band5)
 
     # caclulating: (band1 + (6 * band5)) - ((7.5 * band3) + 1)
@@ -73,22 +77,27 @@ def evi_calculation(band1, band3, band5, band6):
 
     quotient = np.divide(num / denom)
 
-    # calculating: 2.5 * quotient
     evi = np.multiply(a2, quotient)
+    return evi
 
 
     def arvi_calculation(band1, band3, band5):
-    """ Does the ARVI calculation"""
-
+    """ 
+        Does ratio calculation using the ARVI formula
+        ARVI = (Band1 - 2 * Band5 + Band3) / (Band1 + 2 * Band5 - Band3)
+    """
+        # calculating: (Band1 - (2 * Band5) + Band3)
         a2 = np.full((2400, 2400, 4), 2)
         a2_b5 = np.multiply(a2, band5)
         bs1_a2_b5 = np.subtract(band1, a2_b5)
         num = np.add(b1_a2_b5, band3)
 
+        # Calculating: (Band1 + (2 * Band5) - Band3)
         ba1_a2_b5 = np.add(band1, a2_b5)
         denom = np.subtract(ba1_a2_b5, band3)
 
         arvi = np.divide(num, denom)
+        return arvi
 
 
 def load_print_file(file):
