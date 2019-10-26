@@ -106,7 +106,7 @@ The proposed forecasting algorithm at full implementation would receive data fro
    - An ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters to handle the inherent uncertainty in model inputs and the model uncertainty due to the data resolution.
    - The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
-![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram.png "system level diagram")
+![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram%20v2.png "system level diagram")
 
 ## Front End
 A web app was developed using 
