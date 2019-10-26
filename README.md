@@ -54,7 +54,7 @@ Bloomer is a web app that provides a service for alerting the public to aquatic 
 + Image of UI
 ```
 ## What Are Algae Blooms
-Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This resuts in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
+Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This results in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
 
 **Harmful algae blooms (HABs)** contain algae species which additionally release toxins which can contaminate waterways, further causing health issues through contamination of drinking water and contact with wildlife.
 <p align="center">
@@ -107,7 +107,7 @@ The proposed forecasting algorithm at full implementation would receive data fro
 - Ground-based measurements are combined with spectral estimates using linear interpolation to populate gaps in spatial data and Savitzky–Golay (S-G) filtering to smooth the time series due to its robustness towards varying time intervals of a measurement [16].
 - A boosted regression tree will be used to forecast the algae population from the time series data.
    - An ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters to handle the inherent uncertainty in model inputs and the model uncertainty due to the data resolution.
-   - The resultant Monte Carlo output may then be used as a probabalistic forecast.
+   - The resultant Monte Carlo output may then be used as a probabilistic forecast.
 
 ![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram%20v2.png "system level diagram")
 
