@@ -67,11 +67,15 @@ def create_rgbwb_class_colors(class_colors):
 
 def paint_by_colours(labels, clusters, w, h):
     image = np.zeros((w,h,3))
+    rgb_cluster = np.zeros(4)
     label_idx = 0
+    
+    for i in range(4):
+        rbg_cluster[i] = clusters[i][:-1]
     
     for i in range(w):
         for j in range(h):
-            image[i][j] = clusters[labels[label_idx]]
+            image[i][j] = rgb_cluster[labels[label_idx]]
             label_idx += 1
             
     #blur to get rid of salt + pepper noise
