@@ -18,23 +18,26 @@ def generate_json(ratio_band):
     data = {"IR": ir, "Red": red, "Green": green}
 
     with open('ratios.json', 'w') as outfile:
-        json.dump(data, outfile)
+        json.dump(data, outfile, indent=4)
 
 
 # ratio_bands is an array of ratios arrays
 # dates is an array of dates corresponding to the ratio array
 def generate_json(ratio_bands, dates):
-    #convert arrays to list so json can serialize
-    ir = ratio_bands[0].tolist()
-    red = ratio_bands[1].tolist()
-    green = ratio_bands[2].tolist()
-
     data = {}
-    data[dates[0]] = []
-    data[dates[0]].append({"IR": ir, "Red": red, "Green": green})
+
+    for i in range(len(ratio_bands)):
+
+        #convert arrays to list so json can serialize
+        ir = ratio_bands[i][0].tolist()
+        red = ratio_bands[i][1].tolist()
+        green = ratio_bands[i][2].tolist()
+
+        data[dates[i]] = []
+        data[dates[i]].append({"IR": ir, "Red": red, "Green": green})
 
     with open('ratios_dates.json', 'w') as outfile:
-        json.dump(data, outfile)
+        json.dump(data, outfile, indent=4)
 
 
 ### Code to example run ###
@@ -44,7 +47,7 @@ product = 'MCD43A4'  # Surface reflectance
 dayNum = '2011252'
 lat = 42.124753
 lon = -81.769110
-date = ["05/15/2019"]
+date = ["05/15/2019", "06/15/2019"]
 
 # for gotland algae bloom
 # product = 'MCD43A4'  # Surface reflectance
@@ -64,5 +67,7 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 # chi's code - calculate ratios(rgb) -> output 5 x 2400 x 2400
 rgb = RatioCalculation.add_ratio_bands(rgb)
 band_ratios = rgb * 25
+rgbs = [rgb[3], band_ratios[3]]
 
-generate_json(rgb[3], date)
+#generate_json(rgb[3], date)
+generate_json(rgbs, date)
