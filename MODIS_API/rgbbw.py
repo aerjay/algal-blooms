@@ -26,14 +26,6 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
 
     return (output_arr, output_exempt_indices)
 
-
-def init_class_array():
-    """# Returns an initialized 2D array with dimensions [5][3]"""
-    arr = []
-    for i in range(5):
-        arr.append([0, 0, 0])
-    return arr
-
 # @Param: class_colors - Classifier output, must be 2D array with [5][3] dimensions [[R, G, B],...]
 # @Return:  - Array of length 5 which will contain values of color classification
 def create_rgbwb_class_colors(class_colors):
@@ -41,11 +33,9 @@ def create_rgbwb_class_colors(class_colors):
     @Param: class_colors - Classifier output, must be 2D array with 
     [5][3] dimensions [[R, G, B],...]
     @Return:  - Array of length 5 which will contain values of color classification"""
-    # if len(class_colors) != 5:
-    #     return
 
     # Initialize arrays
-    output_colors_arr = init_class_array()
+    output_colors_arr = np.zeros((5,3))
     exempt_indices = []
 
     # Look for closest black score
