@@ -118,8 +118,8 @@ def download_data_to_folder(product, lat, long, day_num, delete_on_finish):
 
     # Channel 7 in a MCD43A4 file corresponds to MODIS band 1.
     #
-    # Let's map bands 1, 4, and 3 (channels 7,10,9) to RGB.
-    channels = [7, 10, 9]
+    # Let's map bands 5, 1, and 4 (channels 7,10,11), corresponding to infrared, red, and green to RGB.
+    channels = [11, 7, 10]
     for ifn in channels:
         remote_fn = files[ifn]
         url = modis_blob_root + '/' + remote_fn

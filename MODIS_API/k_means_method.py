@@ -1,26 +1,31 @@
-"""LEAVE ME ALONE PYLINTER"""
 from sklearn.cluster import KMeans
+import numpy as np
+from sklearn.utils import resample
 
 def create_labels_colors(input_image, clusters=5):
     """
-    Create labels and colors array from k-means classifier
-    @param: input_image - Receives a 2D array representation of an image in the form of 
-    [x*y][R,G,B,G/R]
+    Receive a image and groups the colours in the image into n = 5 (default) buckets using K-Means
+    @param: input_image - Receives a 2D array representation of an image in the form of (layers, x,y)
     @param: clusters - Defines amount of clusters desired for kmeans classification
-    @return: colors_array, classification array of length clusters OR empty array on failure
-    @return: labels_array, array of category of input array OR empty array on failure
+    @return: colors_array, length 'clusters' array of (1,layers) vectors representing the classifications OR empty array on failure
+    @return: labels_array, (1,x,y) image assigning each pixel to a colour classification OR empty array on failure
     """
-    if (not isinstance(clusters, int) or not isinstance(input_image, list)):
-        return ([], [])
 
-    kmeans = KMeans(clusters)
-    kmeans.fit(input_image)
+    #Convert a 5 x 2400 x 2400 image into a (2400*2400) x 5 image
+    reshaped_img = np.zeros((input_image.shape[1], input_image.shape[2], input_image.shape[0]), dtype = float)
+    for i in range(input_image.shape[0]):
+        reshaped_img[:,:,i] = input_image[i,:,:]
 
-    colors_array = kmeans.cluster_centers_.astype(int)
+    reshaped_img = reshaped_img.reshape((input_image.shape[1] * input_image.shape[2], input_image.shape[0]))
 
-    labels_array = kmeans.labels_
+    image_array_sample = resample(reshaped_img)[:1000]
+    kmeans = KMeans(clusters).fit(image_array_sample)
+    
+    labels_array = kmeans.predict(reshaped_img)
 
-    return (colors_array, labels_array)
+    cluster_array = kmeans.cluster_centers_
+
+    return (cluster_array, labels_array)
     
 # Use Example
 # TEST_IMAGE = [

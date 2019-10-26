@@ -1,3 +1,7 @@
+import cv2
+import numpy as np
+
+
 def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     """
     Matches a closest RGB value from a source and maps it onto an output array and records its index
@@ -14,7 +18,7 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
         if i in output_exempt_indices:
             continue
         c_score = abs(target_rgb[0] - source_arr[i][0]) + \
-        abs(target_rgb[1] - source_arr[i][1]) + abs(target_rgb[2] - source_arr[i][2])
+                  abs(target_rgb[1] - source_arr[i][1]) + abs(target_rgb[2] - source_arr[i][2])
         if c_score < score:
             score = c_score
             index = i
@@ -25,13 +29,6 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     return (output_arr, output_exempt_indices)
 
 
-def init_class_array():
-    """# Returns an initialized 2D array with dimensions [5][3]"""
-    arr = []
-    for i in range(5):
-        arr.append([0, 0, 0])
-    return arr
-
 # @Param: class_colors - Classifier output, must be 2D array with [5][3] dimensions [[R, G, B],...]
 # @Return:  - Array of length 5 which will contain values of color classification
 def create_rgbwb_class_colors(class_colors):
@@ -39,11 +36,9 @@ def create_rgbwb_class_colors(class_colors):
     @Param: class_colors - Classifier output, must be 2D array with 
     [5][3] dimensions [[R, G, B],...]
     @Return:  - Array of length 5 which will contain values of color classification"""
-    if len(class_colors) != 5:
-        return
 
     # Initialize arrays
-    output_colors_arr = init_class_array()
+    output_colors_arr = np.zeros((5, 3))
     exempt_indices = []
 
     # Look for closest black score
@@ -62,6 +57,29 @@ def create_rgbwb_class_colors(class_colors):
     output_colors_arr, exempt_indices = assign_rgb(class_colors, [255, 0, 0], output_colors_arr, exempt_indices)
 
     return output_colors_arr
+
+
+def paint_by_colours(labels, clusters):
+    w, h = 2400, 2400
+
+    image = np.zeros((w, h, 3))
+    rgb_cluster = np.zeros((5, 3), dtype=float)
+    label_idx = 0
+
+    for i in range(4):
+        rgb_cluster[i][0] = clusters[i][0]
+        rgb_cluster[i][1] = clusters[i][1]
+        rgb_cluster[i][2] = clusters[i][2]
+
+    for i in range(w):
+        for j in range(h):
+            image[i][j] = rgb_cluster[labels[label_idx]]
+            label_idx += 1
+
+    # blur to get rid of salt + pepper noise
+    # medianBlur = cv2.medianBlur(image, 3)
+
+    return image
 
 # Use Example
 # TEST_ARRAY = [[255,255,255, 2],[25,255,25, 0],[1,1,1, 0],[255,25,25, 0],[25,25,255, 0]]
