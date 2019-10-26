@@ -52,6 +52,45 @@ def ndvi_calculation(arr1, arr2, save_file):
     #load_print_file("img1-img2")
 
 
+def evi_calculation(band1, band3, band5, band6):
+
+    """ Does the EVI calculation"""
+    # create arrays of same shape to do the operations with
+    a1 = np.full((2400, 2400, 4), 1)
+    a2 = np.full((2400, 2400, 4), 2.5)
+    a6 = np.full((2400, 2400, 4), 6)
+    a7 = np.full((2440, 2400, 4), 7.5)
+
+    # caclulating: band1 - band5
+    num = np.substract(band1, band5)
+
+    # caclulating: (band1 + (6 * band5)) - ((7.5 * band3) + 1)
+    a6_band5 = np.multiply(a6, band5)
+    a7_band3 = np.multiply(a7, band3)
+    band1_b5 = np.add(band1, a6_band5)
+    a7_band3_a1 = np.add(a7_band3, a1)
+    denom = np.subtract(band1_b5, a7_band3_a1)
+
+    quotient = np.divide(num / denom)
+
+    # calculating: 2.5 * quotient
+    evi = np.multiply(a2, quotient)
+
+
+    def arvi_calculation(band1, band3, band5):
+    """ Does the ARVI calculation"""
+
+        a2 = np.full((2400, 2400, 4), 2)
+        a2_b5 = np.multiply(a2, band5)
+        bs1_a2_b5 = np.subtract(band1, a2_b5)
+        num = np.add(b1_a2_b5, band3)
+
+        ba1_a2_b5 = np.add(band1, a2_b5)
+        denom = np.subtract(ba1_a2_b5, band3)
+
+        arvi = np.divide(num, denom)
+
+
 def load_print_file(file):
     """ 
         loads and prints a given .npy file 
