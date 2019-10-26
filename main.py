@@ -2,6 +2,7 @@ from MODIS_API import MODIS_Module
 from MODIS_API import RatioCalculation
 from MODIS_API import k_means_method
 from MODIS_API import rgbbw
+from MODIS_API import graphCSV
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -33,27 +34,32 @@ rgb = RatioCalculation.add_ratio_bands(rgb)
 plt.imshow(rgb[3])
 plt.show()
 
-rgb = rgb*25
-# [0] is IR band
-# [1] is Red band
-# [2] is Blue band
+rgb_copy = rgb*25
+# [0] is IR band (MODIS 5)
+# [1] is Red band (MODIS 1)
+# [2] is Green band (MODIS 4)
 # [3] is a ratio band NDVI
 # [4] is a ratio band EVI
 
 # bens code - k_means_method.create_labels_colors(reshaped array)
 # returns colours, labels
-cluster, label = k_means_method.create_labels_colors(rgb)
+cluster, label = k_means_method.create_labels_colors(rgb_copy)
 
 # rgb = rgbbw.create_rgbwb_class_colors(colours)
-rgb = rgbbw.create_rgbwb_class_colors(cluster)
+false_colour_legend = rgbbw.create_rgbwb_class_colors(cluster)
 
-# blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)
-rgb = rgbbw.paint_by_colours(label, rgb)
+false_colour = rgbbw.paint_by_colours(label, false_colour_legend)
+
 #  resize image to 5 x 2400 x 2400
+#medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
 
-medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
+# james code - calculating average NDVI & red reflectance for plots
 
+#### We need to figure out which colour cluster labels as water and put that index number into graphData()
+timeseriesdata = = np.zeros(6, dtype = float)
+for i in range(6):
+  timeseriesdata[j] = graphCSV.graphData(rgb, label, 2)
+
+np.savetxt(lat+"-"+lon+"+".csv", timeseriesdata, delimiter = ",")
 RatioCalculation.show_image(medianBlur)
-
-
