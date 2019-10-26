@@ -20,7 +20,7 @@ def create_labels_colors(input_image, clusters=5):
     labels_array = KMeans(clusters, precompute_distances=True).fit_predict(reshaped_img)
     labels_array = labels_array.reshape(((1, input_image.shape[1], input_image.shape[2])))
 
-    colors_array = kmeans.cluster_centers_.astype(int)
+    colors_array = KMeans.cluster_centers_.astype(int)
 
 
     return (colors_array, labels_array)
