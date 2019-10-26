@@ -1,5 +1,6 @@
 from sklearn.cluster import KMeans
 import numpy as np
+from sklearn.utils import shuffle
 
 def create_labels_colors(input_image, clusters=5):
     """
@@ -17,11 +18,12 @@ def create_labels_colors(input_image, clusters=5):
 
     reshaped_img = reshaped_img.reshape((input_image.shape[1] * input_image.shape[2], input_image.shape[0]))
 
-    labels_array = KMeans(clusters, precompute_distances=True).fit_predict(reshaped_img)
-    labels_array = labels_array.reshape(((1, input_image.shape[1], input_image.shape[2])))
+    image_array_sample = shuffle(reshaped_img, random_state=0)[:1000]
+    kmeans = KMeans(clusters, random_state=0).fit(image_array_sample)
+    
+    labels_array =  kmeans.predict(reshaped_img)
 
-    colors_array = KMeans.cluster_centers_.astype(int)
-
+    colors_array = kmeans.cluster_centers_.astype(int)
 
     return (colors_array, labels_array)
     
