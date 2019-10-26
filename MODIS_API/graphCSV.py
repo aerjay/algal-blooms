@@ -1,14 +1,14 @@
-#assuming the water class is index 3 and the ARVI layer is the 5th layer
-
-#This code will receive the 5-layer-image (from Chi) and its 1-d classification array (from Ben)
-#and output the average ARVI of pixels classified as water.
-#In main.py, call this function n times, where n is the number of images and populate
-#the array with the output data. That array may then be exported as a csv for the front end
+"""
+In main.py, call this function n times, where n is the number of images and populate
+the array with the output data. That array may then be exported as a csv for the front end
+"""
 import numpy as np
 
 def graphData(img, labels, water_label):
-    #receive the image containing (IR, red, green) and NDVI data in the shape 4 x 2400 x 2400
-    #as well as the KMeans labels (as 1D array) and an indicator for which label is for water
+    """
+    Receive the image containing (IR, red, green) and NDVI data in the shape 4 x 2400 x 2400
+    as well as the KMeans labels (as 1D array) and an indicator for which label is for water
+    """
     
     NDVI_layer = np.zeros((2400,2400), dtype = float)
     red_layer = np.zeros((2400,2400), dtype = float)
@@ -35,7 +35,7 @@ def graphData(img, labels, water_label):
     return graph_data
 
 
-
+"""
 #to be included in main:
     #file name will include lat, long, and end date of the images
 graphCSV = np.zeros(6, dtype = float)
@@ -46,3 +46,4 @@ for j in range(6):
     graphCSV[j] = graphData(rgb, labels, water)
 
 np.savetxt(lat+"-"+long+"-"+date+".csv", graphCSV, delimiter = ",")
+"""
