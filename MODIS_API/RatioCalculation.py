@@ -1,5 +1,6 @@
 import os
 import numpy as np
+from numpy import inf
 from pathlib import Path
 import matplotlib.pyplot as plt
 
@@ -89,7 +90,13 @@ def add_ratio_bands(rgb):
     rgb.append(evi_band)
 
     # return a numpy array instead of a list
-    return np.array(rgb)
+    numpy_arr = np.array(rgb)
+
+    # get rid of -inf and inf
+    # numpy_arr[4][numpy_arr[4] == inf] = 1
+    # numpy_arr[4][numpy_arr[4] == -inf] = -1
+
+    return numpy_arr
 
 
 def load_print_file(file):

@@ -19,16 +19,13 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 # This just combines the original .tiff files into a false-colour image
 # MODIS_Module.show_modis_image()
 
-# chi's code - calculate ratios(rgb) -> output 2400 x 2400 x 5
+# chi's code - calculate ratios(rgb) -> output 5 x 2400 x 2400
 rgb = RatioCalculation.add_ratio_bands(rgb)
 # [0] is IR band
 # [1] is Red band
 # [2] is Blue band
 # [3] is a ratio band NDVI
 # [4] is a ratio band EVI
-
-# reshape 5 (z) x 2400 (x) x 2400 (y)  to [z, x*y]
-rgb = rgb.reshape((rgb.shape[0], rgb.shape[1] * rgb.shape[2]))
 
 # bens code - k_means_method.create_labels_colors(reshaped array)
 # returns colours, labels

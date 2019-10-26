@@ -1,4 +1,5 @@
 from sklearn.cluster import KMeans
+import numpy as np
 
 def create_labels_colors(input_image, clusters=5):
     """
@@ -8,9 +9,9 @@ def create_labels_colors(input_image, clusters=5):
     @return: colors_array, length 'clusters' array of (1,layers) vectors representing the classifications OR empty array on failure
     @return: labels_array, (1,x,y) image assigning each pixel to a colour classification OR empty array on failure
     """
-    reshaped_img = input_image.reshape((input_image.shape[0], input_image.shape[1] * input_image.shape[2]))
+    reshaped_img = input_image.reshape((input_image.shape[1] * input_image.shape[2], input_image.shape[0]))
 
-    kmeans = KMeans(clusters, precompute_distances=True).fit(reshaped_image)
+    kmeans = KMeans(clusters, precompute_distances=True).fit(reshaped_img)
 
     colors_array = kmeans.cluster_centers_.astype(int)
 
