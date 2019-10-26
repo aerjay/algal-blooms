@@ -88,7 +88,7 @@ Remote sensing multispectral images of the earth are readily available through N
 ## Back End
 The proof-of-concept model only had access to the MODIS-Terra database and will classify regions in the image based on their NDVI characteristics.
 
-The normalized difference vegetation index (NDVI) in water-classified pixels is averaged for that region and shown over time alongside 10th and 90th percentile error bars as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
+The normalized difference vegetation index (NDVI) and MODIS Band 1 (620–670 nm, the closest match to the desired 683 nm chlorophyll fluorescence band [17]) in water-classified pixels is averaged for that region and shown over time alongside 10th and 90th percentile error bars as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
 
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
@@ -118,9 +118,12 @@ A web app was developed using
 ### Prediction Model
 - [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
   - the Bloomer team currently only has access to the MODIS-Terra database which does not include large bodies of water and the spectral data has been normalized for land-based uses, resulting in limited image quality over water bodies of interest
+  - For inland water bodies, higher resolution databases such as MASTER, HICO, or AVIRIS would be more effective on the smaller spatial sized regions.
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
 - [ ] Training an SVM for water-based vegetation identification [16]
+- [ ] Leveraging spectral analysis of the 680 - 900 nm band to identify algal species to provide more specific models [17]
+  - This would require both sufficient spatial resolution to omit non-water pixels and spectral resolution to distinguish reflectance peaks within the desired band [17]
 
 ### User Segment
 - [ ] 
@@ -146,6 +149,7 @@ I apologize ahead of time that this list of references is not in the order of ap
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
 - [13] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
-- [14]
+- [14] Palmer, S.C.J., Kutser, T. & Hunter, P.D. (2015) Remote sensing of inland waters: Challenges, progress and future directions. Remote Sensing of Environment. [Online] 157, 1–8. Available from: doi:10.1016/j.rse.2014.09.021.
 - [15] Rashmi S, Swapna Addamani, Venkat, and Ravikiran S. Spectral Angle Mapper Algorithm for Remote Sensing Image Classification. IJISET - International Journal of Innovative Science, Engineering & Technology, Vol. 1 Issue 4, June 2014.
 - [16] Long Zhao, Pan Zhang, Xiaoyi Ma, and Zhuokun Pan, “Land Cover Information Extraction Based on Daily NDVI Time Series and Multiclassifier Combination,” Mathematical Problems in Engineering, vol. 2017, Article ID 6824051, 13 pages, 2017. https://doi.org/10.1155/2017/6824051.
+- [17] Shen, L.; Xu, H.; Guo, X. Satellite Remote Sensing of Harmful Algal Blooms (HABs) and a Potential Synthesized Framework. Sensors 2012, 12, 7778-7803.
