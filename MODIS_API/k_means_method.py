@@ -8,7 +8,13 @@ def create_labels_colors(input_image, clusters=5):
     @return: colors_array, length 'clusters' array of (1,layers) vectors representing the classifications OR empty array on failure
     @return: labels_array, (1,x,y) image assigning each pixel to a colour classification OR empty array on failure
     """
-    reshaped_img = input_image.reshape((input_image.shape[0], input_image.shape[1] * input_image.shape[2]))
+    
+    #Convert a 5 x 2400 x 2400 image into a (2400*2400) x 5 image
+    reshaped_img = np.zeros((input_image.shape[1], input_image.shape[2], input_image.shape[0]), dtype = float)
+    for i in range(input_image.shape[0]):
+        reshaped_img[:,:,i] = input_image[i,:,:]
+ 
+    reshaped_img = reshaped_img.reshape((input_image.shape[1] * input_image.shape[2], input_image.shape[0]))
 
     kmeans = KMeans(clusters, precompute_distances=True).fit(reshaped_image)
 
