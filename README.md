@@ -5,6 +5,9 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 Link to our video:
 **TBA**
 
+App Web Page:
+http://earlybloomers.co/
+
 # Bloomer: Early Warning System
 ## Table of Contents
   1. [Meet the Team](#meet-the-team)
