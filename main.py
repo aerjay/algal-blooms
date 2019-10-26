@@ -36,7 +36,7 @@ rgb = rgbbw.create_rgbwb_class_colors(colours)
 
 # blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)
-rgb = rgbbw.apply_median_blur(rgb, labels, colours)
+rgb = rgbbw.paint_by_colours(labels, colours, 2400, 2400)
 #  resize image to 5 x 2400 x 2400
 
 medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
