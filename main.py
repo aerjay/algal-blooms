@@ -62,4 +62,4 @@ for i in range(6):
   timeseriesdata[j] = graphCSV.graphData(rgb, label, 2)
 
 np.savetxt(lat+"-"+lon+"+".csv", timeseriesdata, delimiter = ",")
-RatioCalculation.show_image(medianBlur)
+RatioCalculation.show_image(false_colour)
