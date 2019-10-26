@@ -53,7 +53,6 @@ def ndvi_calculation(arr1, arr2, save_file):
 
 
 def evi_calculation(band1, band3, band5, band6):
-
     """ 
         Does ratio calculation using the EVI formula
         EVI = 2.5 * (Band1-Band5) / (Band1 + (6 * Band5) - (7.5 * Band3) + 1)
@@ -63,41 +62,47 @@ def evi_calculation(band1, band3, band5, band6):
     a1 = np.full((2400, 2400, 4), 1)
     a2 = np.full((2400, 2400, 4), 2.5)
     a6 = np.full((2400, 2400, 4), 6)
-    a7 = np.full((2440, 2400, 4), 7.5)
+    a7 = np.full((2400, 2400, 4), 7.5)
 
     # caclulating: (band1 - band5)
-    num = np.substract(band1, band5)
+    num = np.subtract(band1, band5)
 
     # caclulating: (band1 + (6 * band5)) - ((7.5 * band3) + 1)
     a6_band5 = np.multiply(a6, band5)
     a7_band3 = np.multiply(a7, band3)
     band1_b5 = np.add(band1, a6_band5)
     a7_band3_a1 = np.add(a7_band3, a1)
-    denom = np.subtract(band1_b5, a7_band3_a1)
+    denum = np.subtract(band1_b5, a7_band3_a1)
 
-    quotient = np.divide(num / denom)
+    quotient = np.divide(num, denum)
 
     evi = np.multiply(a2, quotient)
+
+    # can save and then call load_print_file("arvi") to see result
+    # np.save("evi.npy", evi)
     return evi
 
 
-    def arvi_calculation(band1, band3, band5):
+def arvi_calculation(band1, band3, band5):
     """ 
         Does ratio calculation using the ARVI formula
         ARVI = (Band1 - 2 * Band5 + Band3) / (Band1 + 2 * Band5 - Band3)
     """
-        # calculating: (Band1 - (2 * Band5) + Band3)
-        a2 = np.full((2400, 2400, 4), 2)
-        a2_b5 = np.multiply(a2, band5)
-        bs1_a2_b5 = np.subtract(band1, a2_b5)
-        num = np.add(b1_a2_b5, band3)
+    # calculating: (Band1 - (2 * Band5) + Band3)
+    a2 = np.full((2400, 2400, 4), 2)
+    a2_b5 = np.multiply(a2, band5)
+    bs1_a2_b5 = np.subtract(band1, a2_b5)
+    num = np.add(bs1_a2_b5, band3)
 
-        # Calculating: (Band1 + (2 * Band5) - Band3)
-        ba1_a2_b5 = np.add(band1, a2_b5)
-        denom = np.subtract(ba1_a2_b5, band3)
+    # Calculating: (Band1 + (2 * Band5) - Band3)
+    ba1_a2_b5 = np.add(band1, a2_b5)
+    denum = np.subtract(ba1_a2_b5, band3)
 
-        arvi = np.divide(num, denom)
-        return arvi
+    arvi = np.divide(num, denum)
+
+    # can save and then call load_print_file("arvi") to see result
+    # np.save("arvi.npy", arvi)
+    return arvi
 
 
 def load_print_file(file):
@@ -112,4 +117,27 @@ def load_print_file(file):
 
 
 ### Function call ###
-calculate_ratios("img1", "img2")
+# calculate_ratios("img1", "img2")
+"""
+# setup for example method calls
+"""
+""" <-- uncomment this
+i1 = generate_file_path("img1")
+i2 = generate_file_path("img2")
+i3 = generate_file_path("img3")
+
+# generate arrays from images
+a1 = plt.imread(i1)
+a2 = plt.imread(i2)
+a3 = plt.imread(i3)
+ uncomment this --> """
+"""<-- uncomment this for EVI
+#This is an example of how to use the evi_calculation method
+evi_calculation(a1, a2, a3, a1)
+load_print_file("evi")
+ uncomment this for EVI --> """
+"""<-- uncomment this for ARVI
+# This is an example of how to use the arvi_calculation method
+arvi_calculation(a1, a2, a3)
+load_print_file("arvi")
+ uncomment this for ARVI --> """
