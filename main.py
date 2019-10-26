@@ -2,6 +2,7 @@ from MODIS_API import MODIS_Module
 from MODIS_API import RatioCalculation
 from MODIS_API import k_means_method
 from MODIS_API import rgbbw
+import matplotlib.pyplot as plt
 import numpy as np
 
 # Let's look at the tile containing Chicago, IL, on May 15, 2019 (day of year 135)
@@ -9,6 +10,12 @@ product = 'MCD43A4'  # Surface reflectance
 dayNum = '2011252'
 lat = 42.124753
 lon = -81.769110
+
+# for gotland algae bloom
+# product = 'MCD43A4'  # Surface reflectance
+# dayNum = '2005194'
+# lat = 57.4684
+# lon = 18.4867
 remove_files_on_finish = False
 
 # uncomment below line if you need to re-query images from the API
@@ -22,7 +29,11 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 # chi's code - calculate ratios(rgb) -> output 5 x 2400 x 2400
 rgb = RatioCalculation.add_ratio_bands(rgb)
 
-rgb = rgb*10
+# show only the ratio band
+plt.imshow(rgb[3])
+plt.show()
+
+rgb = rgb*25
 # [0] is IR band
 # [1] is Red band
 # [2] is Blue band
@@ -38,7 +49,7 @@ rgb = rgbbw.create_rgbwb_class_colors(cluster)
 
 # blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)
-rgb = rgbbw.paint_by_colours(label, cluster, 2400, 2400)
+rgb = rgbbw.paint_by_colours(label, rgb)
 #  resize image to 5 x 2400 x 2400
 
 medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))

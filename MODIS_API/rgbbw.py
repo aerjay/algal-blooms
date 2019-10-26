@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     """
     Matches a closest RGB value from a source and maps it onto an output array and records its index
@@ -17,7 +18,7 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
         if i in output_exempt_indices:
             continue
         c_score = abs(target_rgb[0] - source_arr[i][0]) + \
-        abs(target_rgb[1] - source_arr[i][1]) + abs(target_rgb[2] - source_arr[i][2])
+                  abs(target_rgb[1] - source_arr[i][1]) + abs(target_rgb[2] - source_arr[i][2])
         if c_score < score:
             score = c_score
             index = i
@@ -26,6 +27,7 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     output_exempt_indices.append(index)
 
     return (output_arr, output_exempt_indices)
+
 
 # @Param: class_colors - Classifier output, must be 2D array with [5][3] dimensions [[R, G, B],...]
 # @Return:  - Array of length 5 which will contain values of color classification
@@ -36,7 +38,7 @@ def create_rgbwb_class_colors(class_colors):
     @Return:  - Array of length 5 which will contain values of color classification"""
 
     # Initialize arrays
-    output_colors_arr = np.zeros((5,3))
+    output_colors_arr = np.zeros((5, 3))
     exempt_indices = []
 
     # Look for closest black score
@@ -56,7 +58,10 @@ def create_rgbwb_class_colors(class_colors):
 
     return output_colors_arr
 
-def paint_by_colours(labels, clusters, w, h):
+
+def paint_by_colours(labels, clusters):
+    w, h = 2400, 2400
+
     image = np.zeros((w, h, 3))
     rgb_cluster = np.zeros((5, 3), dtype=float)
     label_idx = 0
@@ -65,15 +70,15 @@ def paint_by_colours(labels, clusters, w, h):
         rgb_cluster[i][0] = clusters[i][0]
         rgb_cluster[i][1] = clusters[i][1]
         rgb_cluster[i][2] = clusters[i][2]
-    
+
     for i in range(w):
         for j in range(h):
             image[i][j] = rgb_cluster[labels[label_idx]]
             label_idx += 1
-            
-    #blur to get rid of salt + pepper noise
+
+    # blur to get rid of salt + pepper noise
     # medianBlur = cv2.medianBlur(image, 3)
-    
+
     return image
 
 # Use Example
