@@ -29,14 +29,14 @@ rgb = RatioCalculation.add_ratio_bands(rgb)
 
 # bens code - k_means_method.create_labels_colors(reshaped array)
 # returns colours, labels
-colours, labels = k_means_method.create_labels_colors(rgb)
+cluster, label = k_means_method.create_labels_colors(rgb)
 
 # rgb = rgbbw.create_rgbwb_class_colors(colours)
 rgb = rgbbw.create_rgbwb_class_colors(colours)
 
 # blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)
-rgb = rgbbw.paint_by_colours(labels, colours, 2400, 2400)
+rgb = rgbbw.paint_by_colours(label, cluster, 2400, 2400)
 #  resize image to 5 x 2400 x 2400
 
 medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
