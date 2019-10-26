@@ -109,3 +109,4 @@ def ndvi_calculation(arr1, arr2, save_file):
 
     np.save(save_file, div_arr)
     # load_print_file("img1-img2")
+"""
