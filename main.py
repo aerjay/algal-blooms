@@ -21,6 +21,8 @@ rgb = MODIS_Module.get_modis_bands_array()  # 3 x 2400 x 2400
 
 # chi's code - calculate ratios(rgb) -> output 5 x 2400 x 2400
 rgb = RatioCalculation.add_ratio_bands(rgb)
+
+rgb = rgb*10
 # [0] is IR band
 # [1] is Red band
 # [2] is Blue band
@@ -32,7 +34,7 @@ rgb = RatioCalculation.add_ratio_bands(rgb)
 cluster, label = k_means_method.create_labels_colors(rgb)
 
 # rgb = rgbbw.create_rgbwb_class_colors(colours)
-rgb = rgbbw.create_rgbwb_class_colors(colours)
+rgb = rgbbw.create_rgbwb_class_colors(cluster)
 
 # blurs 2d image
 # aerjays code - polarizing the image(flattened image, labels, rgb)

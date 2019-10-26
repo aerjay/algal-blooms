@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     """
@@ -56,12 +57,14 @@ def create_rgbwb_class_colors(class_colors):
     return output_colors_arr
 
 def paint_by_colours(labels, clusters, w, h):
-    image = np.zeros((w,h,3))
-    rgb_cluster = np.zeros(4)
+    image = np.zeros((w, h, 3))
+    rgb_cluster = np.zeros((5, 3), dtype=float)
     label_idx = 0
-    
+
     for i in range(4):
-        rbg_cluster[i] = clusters[i][:-1]
+        rgb_cluster[i][0] = clusters[i][0]
+        rgb_cluster[i][1] = clusters[i][1]
+        rgb_cluster[i][2] = clusters[i][2]
     
     for i in range(w):
         for j in range(h):
@@ -69,7 +72,7 @@ def paint_by_colours(labels, clusters, w, h):
             label_idx += 1
             
     #blur to get rid of salt + pepper noise
-    medianBlur = cv2.medianBlur(image, 3)
+    # medianBlur = cv2.medianBlur(image, 3)
     
     return image
 

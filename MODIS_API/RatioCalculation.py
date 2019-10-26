@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def ndvi_calculation(arr1, arr2):
     """
@@ -54,6 +55,10 @@ def load_print_file(file):
     infile = np.load(file + ".npy")
     print(file + ' ')
     print(infile)
+
+def show_image(img):
+    plt.imshow(img)
+    plt.show()
 
 ### Function call ###
 # calculate_ratios("img1", "img2")
