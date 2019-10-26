@@ -5,9 +5,6 @@ import shutil
 import urllib
 import matplotlib.pyplot as plt
 import rasterio
-import cv2
-from sklearn.cluster import KMeans
-import scipy.misc
 from azure.storage.blob import BlockBlobService
 
 # Storage locations are documented at http://aka.ms/ai4edata-modis
@@ -20,11 +17,8 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))  # This is your Project Ro
 modis_temp_path = os.path.join(ROOT_DIR, 'MODIS_Images')
 os.makedirs(modis_temp_path, exist_ok=True)
 
-# This file is provided by NASA; it indicates the lat/lon extents of each
-# MODIS tile.
-#
+# This file is provided by NASA; it indicates the lat/lon extents of each MODIS tile.
 # The file originally comes from:
-#
 # https://modis-land.gsfc.nasa.gov/pdf/sn_bound_10deg.txt
 modis_tile_extents_url = modis_blob_root + '/sn_bound_10deg.txt'
 
@@ -45,7 +39,6 @@ modis_blob_service = BlockBlobService(account_name=modis_account_name,
 def lat_lon_to_modis_tiles(lat, lon):
     """
     Get the modis tile indices (h,v) for a given lat/lon
-
     https://www.earthdatascience.org/tutorials/convert-modis-tile-to-lat-lon/
     """
 
@@ -103,8 +96,7 @@ def download_url_to_temp_file(url):
     print("MODIS file downloaded to: " + modis_temp_path)
     download_url(url, fn)
     return fn
-
-
+  
 # Files are stored according to:
 # http://modissa.blob.core.windows.net/[product]/[htile]/[vtile]/[year][day]/kifilename
 
@@ -117,7 +109,6 @@ def download_data_to_folder(product, lat, long, day_num, delete_on_finish):
     files = list_tiff_blobs_in_folder(modis_container_name, folder)
 
     # Channel 7 in a MCD43A4 file corresponds to MODIS band 1.
-    #
     # Let's map bands 5, 1, and 4 (channels 7,10,11), corresponding to infrared, red, and green to RGB.
     channels = [11, 7, 10]
     for ifn in channels:
@@ -152,70 +143,3 @@ def get_modis_bands_array():
         image_data.append(band_array)
 
     return image_data
-
-# Todo: remove all commented code below into their own respective classes and call them in main.py
-#
-# class DominantColors:
-#     CLUSTERS = None
-#     IMAGE = None
-#     COLORS = None
-#     LABELS = None
-#
-#     def __init__(self, image, clusters=3):
-#         self.CLUSTERS = clusters
-#         self.IMAGE = image
-#
-#     def dominantColors(self):
-#         # read image
-#         img = cv2.imread(self.IMAGE)
-#
-#         # convert to rgb from bgr
-#         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-#
-#         # reshaping to a list of pixels
-#         print("image shape:" + str(img.shape[0]) + " by " + str(img.shape[1]))
-#         img = img.reshape((img.shape[0] * img.shape[1], 3))
-#
-#         # save image after operations
-#         self.IMAGE = img
-#
-#         # using k-means to cluster pixels
-#         kmeans = KMeans(n_clusters=self.CLUSTERS)
-#         kmeans.fit(img)
-#
-#         # the cluster centers are our dominant colors.
-#         self.COLORS = kmeans.cluster_centers_
-#
-#         # save labels
-#         self.LABELS = kmeans.labels_
-#
-#         # returning after converting to integer from float
-#         return self.COLORS.astype(int)
-#
-# colors = "Figure_1.png"
-# clusters = 5
-# dc = DominantColors(colors, clusters)
-# colors = dc.dominantColors()
-# print(colors)
-# print(dc.LABELS.shape)
-#
-# length, colors = dc.IMAGE.shape
-#
-# for i in range(length):
-#     if dc.LABELS[i] == 1:
-#         dc.IMAGE[i] = [255, 0, 0]
-#     if dc.LABELS[i] == 0:
-#         dc.IMAGE[i] = [255, 255, 255]
-#     if dc.LABELS[i] == 4:
-#         dc.IMAGE[i] = [0, 0, 0]
-#     if dc.LABELS[i] == 2:
-#         dc.IMAGE[i] = [0, 255, 0]
-#     if dc.LABELS[i] == 3:
-#         dc.IMAGE[i] = [0, 0, 255]
-#
-# dc.IMAGE = dc.IMAGE.reshape((476, 640, 3))
-#
-# medianBlur = cv2.medianBlur(dc.IMAGE, 3)
-#
-# plt.imshow(medianBlur)
-# plt.show()
