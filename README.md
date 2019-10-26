@@ -29,7 +29,7 @@ Link to our video:
 </p>
 From Left to Right:  
 
-**Chi Nguyen, B. Sc Computer Science, B. Sc Biological Science**  
+**Chi Nguyen, B. Sc. Computer Science & B. Sc. Biological Science**  
 *Chi is a junior developer with Aucerna, with experience in software development and design. This is Chi's first time participating in a hackathon and was very interested in the topic that combined both her fields of study.*  
 
 **Aerjay Italia, B.**  
@@ -39,13 +39,13 @@ From Left to Right:
 *Ben is a junior developer with Aucerna*  
 
 **James Xie, B. ASc. Engineering Chemistry**  
-*James is an operations consultant at Stroud International, with experience in project management and process engineering design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the 2019-2020 SEDS Canada CAN-SBX Challenge.*  
+*James is an operations consultant at Stroud International, with experience in project management and process design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the SEDS Canada CAN-SBX Challenge.*  
 
 **Kal Radikov, B. ASc. Computer Engineering**  
-*Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in engineering and software design. Kal has worked on two hackathon projects including designing foldable oragami wheels to be used on a mars rover and an online Machine Learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
+*Kal is a junior developer with McDaniel & Associates Consultants Ltd. with experience in software design. Kal has worked on two hackathon projects including foldable oragami wheels to be used on Mars rovers and an online machine learning diary to analyse trends in individuals. On the side, he is an avid painter working mainly with oil paints and 3D sculpture.*
 
 ## Vision
-Bloomer seeks to provide a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom event forecasting may use a paid subscription to a region to access the predictive models. The prediction model will receive data from satellite images (NASA MODIS) and ground-based measurements.
+Bloomer is a web app that provides a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom events may also subscribe to a region to access forecasting and predictive models which receive data from satellite images (NASA MODIS) and ground-based measurements.
 
 ```
 + Image of UI
@@ -62,17 +62,13 @@ Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can 
 
 ## Impact of Algae Blooms
 Overall, algae blooms represent a billion-dollar issue worldwide annually, and affect nearly all coastal/interior bodies of water worldwide.
-
 ### 1. Agriculture & Fishing
 - Losses in the US amount to nearly $35 MM annually in fishing & agriculture industries [11]
 - These industries compose 10-50% of the GDP in many southeast asian countries, making algae blooms incredibly disruptive to local economies.
-
 ### 2. Medical
 - Direct medical costs are incurred through treatment of people and pets exposed to contaminated water. Exposure may cause pneumonia, gastrointestinal illnesses, and respiratory illnesses [10]. In the state of Florida alone, this represents a $22 MM annual loss [10].
-
 ### 3. Tourism & Recreation
 - Revenue is lost through decrease in tourism and recreation to coastal/beach locations, representing a near $7 MM annually in the US, which directly impact hotels and restaurants as well as predominantly affecting smaller communities built near these natural attractions [11]. Cleanup and mitigation efforts amount to further costs associated with blooms ($2 MM/yr in the US) [11].
-
 ### 4. Environmental
 - Damage to ecosystems further cause indirect costs through decreased biodiversity, harm to endangered species, and formations of dead zones which are difficult to reverse.
 
@@ -90,26 +86,30 @@ Remote sensing multispectral images of the earth are readily available through N
 ![map of ground data](https://github.com/aerjay/algal-blooms/blob/master/media_photos/Ground%20Measurement%20Datasets.png "Global map of ground measurements")
 
 ## Back End
-The model used in the proof of concept will consist of only the MODIS-Terra database (see Next Steps: Prediction Model) and classify regions in the image as bare rock/soil, vegetation on land, water, and snow/ice/clouds.
+The proof-of-concept model only had access to the MODIS-Terra database and will classify regions in the image based on their NDVI characteristics.
 
-The averate atmospherically resistant vegetation index (ARVI) in water-classified pixels is averaged for that region and shown over time as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
+The normalized difference vegetation index (NDVI) and MODIS Band 1 (620–670 nm, the closest match to the desired 683 nm chlorophyll fluorescence band [17]) in water-classified pixels is averaged for that region and shown over time alongside 10th and 90th percentile error bars as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
 
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
 
-### Prediction Algorithm
-Data from different sources must be conditioned and processed to estimate variables of interest:
-- satellite spectral data on different surfaces (e.g. land vs. water) will be used to estimate different parameters or discarded
-  - A KMeans classifier using the spectral bands and key band ratios (NDVI and EVI) is used to group regions of similar surfaces
-- ground-based measurements are combined with spectral estimates using a spatial-temporal Kalman filter [14]
+K-Means classification of NDVI regions is non-optimal as it is an unsupervised method and cannot handle non-spherical groups. It has been shown that supervised methods such as support-vector machine (SVM) or spectral-angle mapping classifiers which are both supervised can provide more consistent and accurate classifications of land-cover information [16], however the team did not have sufficient resources to train a supervised model in the available time.
 
-These estimates are then included into a boosted regression tree to forecast the algae population. Due to the inherent uncertainty in model inputs and the model uncertainty due to the data resolution, an ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters. The resultant Monte Carlo output may then be used as a probabalistic forecast.
+### Forecasting Algorithm
+The proposed forecasting algorithm at full implementation would receive data from multiple sources to estimate variables of interest:
+- Satellite spectral data on different surfaces (e.g. land vs. water) will be used to estimate different parameters
+  - A SVM classifier rather than KMeans using key vegetation indices (NDVI and EVI) is used to cluster regions of similar surfaces
+    - pixels identified as water will be considered in subsequent analysis and variable estimation to reduce the data load
+- Ground-based measurements are combined with spectral estimates using linear interpolation to populate gaps in spatial data and Savitzky–Golay (S-G) filtering to smooth the time series due to its robustness towards varying time intervals of a measurement [16].
+- A boosted regression tree will be used to forecast the algae population from the time series data.
+   - An ensemble approach will be applied to the forecast by applying perturbations to model inputs and model parameters to handle the inherent uncertainty in model inputs and the model uncertainty due to the data resolution.
+   - The resultant Monte Carlo output may then be used as a probabalistic forecast.
 
-![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram.png "system level diagram")
+![system level diagram](https://github.com/aerjay/algal-blooms/blob/master/media_photos/System%20Level%20Diagram%20v2.png "system level diagram")
 
 ## Front End
-A web app 
+A web app was developed using 
 
 ```
 + user interface with the map and false colour image
@@ -118,17 +118,24 @@ A web app
 ### Prediction Model
 - [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
   - the Bloomer team currently only has access to the MODIS-Terra database which does not include large bodies of water and the spectral data has been normalized for land-based uses, resulting in limited image quality over water bodies of interest
+  - For inland water bodies, higher resolution databases such as MASTER, HICO, or AVIRIS would be more effective on the smaller spatial sized regions.
 - [ ] Training a boosted regression tree (BRT) model for correlating hyperspectral images to key growth variables [6]
   - MacDougall et al. (2018) has shown that LAI, EVI, GEMI, and GVI indices may be correlated to nitrogen content with R<sup>2</sup> = 0.7
-- [ ] 
+- [ ] Training an SVM for water-based vegetation identification [16]
+- [ ] Leveraging spectral analysis of the 680 - 900 nm band to identify algal species to provide more specific models [17]
+  - This would require both sufficient spatial resolution to omit non-water pixels and spectral resolution to distinguish reflectance peaks within the desired band [17]
 
 ### User Segment
-- [ ]
+- [ ] 
+- [ ] Pull local water quality news for public users seeking awareness of health risks in their area
 
 ### Space Segment
-- [ ]
+- [ ] Increase spatial and temporal resolution of remote sensing data.
+  - Frequent (2-3/day) imaging of equatorial regions (e.g. Southeast Asia) is difficult without either a constellation of sun-synchronous or near-equatorial orbiting satellites. To lower the cost, many researchers are now proposing SmallSat/CubeSat missions to fill this gap. Bloomer would seek to raise awareness and support for these initiatives to further improve its services
 
 ## References
+I apologize ahead of time that this list of references is not in the order of appearance.
+
 - [1] Mati Kahru and B. Greg Mitchell. MODIS Detects a Devastating Algal Bloom in Paracas Bay, Peru. Eos, Vol. 85, No. 45, 9 November 2004
 - [2] Marieke Beaulieu, Frances Pick, Michelle Palmer, Sue Watson, Jenny Winter, Ron Zurawell, and Irene Gregory-Eaves. Comparing predictive cyanobacterial models from temperate regions. Can. J. Fish. Aquat. Sci. 71: 1830–1839 (2014)
 - [3] Marieke Beaulieu, Frances Pick, and Irene Gregory-Eaves. Nutrients and water temperature are significant predictors of cyanobacterial biomass in a 1147 lakes data set. Limnol. Oceanogr., 58(5), 2013, 1736–1746
@@ -142,5 +149,7 @@ A web app
 - [11] Anderson DM, Hoagland P, Kaoru Y, White AW. Estimated annual economic impacts from harmful algal blooms (HABs) in the United States. 2000;WHOI-2000-11.
 - [12] National Centre for Coastal Ocean Science. Phytoplankton Monitoring Network (PMN). Online. 2019. https://coastalscience.noaa.gov/research/stressor-impacts-mitigation/pmn/image-gallery/bloom-mortality-events/
 - [13] MODIS Database. Microsoft Azure Open Datasets. 2019. https://azure.microsoft.com/en-ca/services/open-datasets/catalog/modis/
-- [14] D. Yan, Q. Zhong and Y. Sui, "Spatial Kalman Filters and Spatial-Temporal Kalman Filters," 2014 12th International Conference on Signal Processing (ICSP), Hangzhou, 2014, pp. 1902-1905.
+- [14] Palmer, S.C.J., Kutser, T. & Hunter, P.D. (2015) Remote sensing of inland waters: Challenges, progress and future directions. Remote Sensing of Environment. [Online] 157, 1–8. Available from: doi:10.1016/j.rse.2014.09.021.
 - [15] Rashmi S, Swapna Addamani, Venkat, and Ravikiran S. Spectral Angle Mapper Algorithm for Remote Sensing Image Classification. IJISET - International Journal of Innovative Science, Engineering & Technology, Vol. 1 Issue 4, June 2014.
+- [16] Long Zhao, Pan Zhang, Xiaoyi Ma, and Zhuokun Pan, “Land Cover Information Extraction Based on Daily NDVI Time Series and Multiclassifier Combination,” Mathematical Problems in Engineering, vol. 2017, Article ID 6824051, 13 pages, 2017. https://doi.org/10.1155/2017/6824051.
+- [17] Shen, L.; Xu, H.; Guo, X. Satellite Remote Sensing of Harmful Algal Blooms (HABs) and a Potential Synthesized Framework. Sensors 2012, 12, 7778-7803.
