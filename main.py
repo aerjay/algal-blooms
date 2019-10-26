@@ -2,6 +2,7 @@ from MODIS_API import MODIS_Module
 from MODIS_API import RatioCalculation
 from MODIS_API import k_means_method
 from MODIS_API import rgbbw
+from MODIS_API import ndvi_polarizer
 from MODIS_API import graphCSV
 import matplotlib.pyplot as plt
 import numpy as np
@@ -46,7 +47,8 @@ rgb_copy = rgb*25
 cluster, label = k_means_method.create_labels_colors(rgb_copy)
 
 # rgb = rgbbw.create_rgbwb_class_colors(colours)
-false_colour_legend = rgbbw.create_rgbwb_class_colors(cluster)
+# false_colour_legend = rgbbw.create_rgbwb_class_colors(cluster)
+false_colour_legend = ndvi_polarizer.create_legend_using_ndvi(cluster)
 
 # aerjays code - polarizing the image(flattened image, labels, rgb)
 false_colour = rgbbw.paint_by_colours(label, false_colour_legend)
@@ -61,5 +63,5 @@ timeseriesdata = np.zeros(6, dtype = float)
 for i in range(6):
   timeseriesdata[j] = graphCSV.graphData(rgb, label, 2)
 
-np.savetxt(lat+"-"+lon+"+".csv", timeseriesdata, delimiter = ",")
+np.savetxt(lat+"-"+lon+"+".csv, timeseriesdata, delimiter = ",")
 RatioCalculation.show_image(false_colour)
