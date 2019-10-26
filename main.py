@@ -33,6 +33,11 @@ rgb = RatioCalculation.add_ratio_bands(rgb)
 # show only the ratio band
 plt.imshow(rgb[3])
 plt.show()
+#save that ratio band image
+cmap = plt.get_cmap('jet')
+rgba_img = cmap(rgb[3])
+rgb_img = np.delete(rgba_img, 3, 2)
+cv2.imwrite('NDVI_'+dayNum, rgb_img)
 
 rgb_copy = rgb*25
 # [0] is IR band (MODIS 5)
