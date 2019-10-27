@@ -1,23 +1,46 @@
+#logo{
+    height: auto;
+    width: auto;
+    max-width: 55px;
+    max-height: 55px;
+    margin: 5px;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .navbar-brand a{
     font-weight: bold;
-    color: #67BFA6;
+    color: #759e3f;
     text-decoration: none;
 }
 .nav li {
      float: left;
      list-style-type: none;
      margin: 50px;
-     color: #67BFA6;
+     color: #759e3f;
      }
 .nav a{
     color: inherit;
 }
 
 .img-container{
+      height: 350px;
+      width: 400px;
       display:inline-block;
       margin-right: 20px;
+      margin
     }
 
+.img-container img {
+    width: 100%;
+    height: auto;
+}
 .img-container p {
 text-align: center;
 }

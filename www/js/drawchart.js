@@ -106,7 +106,7 @@ window.onload = function() {
     var chartEl = document.getElementById('chart');
     Chart.scaleService.updateScaleDefaults('linear', {
         ticks: {
-            min: 0
+            min: -1
         }
     });
     window.myLine = new Chart(chartEl, {

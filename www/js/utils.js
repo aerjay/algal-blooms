@@ -125,7 +125,10 @@ window.chartColors = {
 
 	// DEPRECATED
 	window.randomScalingFactor = function() {
-		return Math.round(Samples.utils.rand(0, 255));
+		//return Math.round(Samples.utils.rand(-1, 1));
+		var num =(Math.random()); // this will get a number between 1 and 99;
+        num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+        return num;
 	};
 
 	// INITIALIZATION
