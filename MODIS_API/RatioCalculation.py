@@ -6,10 +6,20 @@ def ndvi_calculation(arr1, arr2):
         Calculates the R/G ratios using the NDVI formula:
         NDVI = (Band 1 - Band 5) / (Band 1 + Band 5)
     """
+    print("Calculating NDVI bands and appending to RGB image")
 
     sub_arr = np.subtract(arr1, arr2)
     add_arr = np.add(arr1, arr2)
     div_arr = np.divide(sub_arr, add_arr)
+
+    # remove possible infinities and NaN
+    div_arr[div_arr == np.inf] = 1
+    div_arr[div_arr == -np.inf] = -1
+    where_are_NaNs = np.isnan(div_arr)
+    div_arr[where_are_NaNs] = 0
+
+    # max = np.amax(div_arr)
+    # min = np.amin(div_arr)
 
     return div_arr
 

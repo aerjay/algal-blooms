@@ -37,6 +37,8 @@ def create_rgbwb_class_colors(class_colors):
     [5][3] dimensions [[R, G, B],...]
     @Return:  - Array of length 5 which will contain values of color classification"""
 
+    print("Classifying values into distinct RGB groups")
+
     # Initialize arrays
     output_colors_arr = np.zeros((5, 3))
     exempt_indices = []
@@ -60,6 +62,8 @@ def create_rgbwb_class_colors(class_colors):
 
 
 def paint_by_colours(labels, clusters):
+
+    print("Swapping classified labels in image with distinct colours ")
     w, h = 2400, 2400
 
     image = np.zeros((w, h, 3))
@@ -77,9 +81,11 @@ def paint_by_colours(labels, clusters):
             label_idx += 1
 
     # blur to get rid of salt + pepper noise
-    # medianBlur = cv2.medianBlur(image, 3)
+    #image = image.astype(np.uint8)
+    image = np.array(image, dtype = np.uint8)
+    medianBlur = cv2.medianBlur(image, 5)
 
-    return image
+    return medianBlur
 
 # Use Example
 # TEST_ARRAY = [[255,255,255, 2],[25,255,25, 0],[1,1,1, 0],[255,25,25, 0],[25,25,255, 0]]
