@@ -32,8 +32,8 @@ From Left to Right:
 **Chi Nguyen, B. Sc. Computer Science & B. Sc. Biological Science**  
 *Chi is a junior developer with Aucerna, with experience in software development and design. This is Chi's first time participating in a hackathon and was very interested in the topic that combined both her fields of study.*  
 
-**Aerjay Italia, B.**  
-*Aer Jay is a junior developer with Aucerna*  
+**Aerjay Italia, B. Sc. Computer Science, Information Security**  
+*Aer Jay is a junior developer with Aucerna with experience in software and computer security*  
 
 **Benjamin Lee, B.**  
 *Ben is a junior developer with Aucerna*  
