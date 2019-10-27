@@ -5,9 +5,6 @@ https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-blo
 Link to our video:
 **TBA**
 
-App Web Page:
-http://earlybloomers.co/
-
 # Bloomer: Early Warning System
 ## Table of Contents
   1. [Meet the Team](#meet-the-team)
@@ -53,6 +50,10 @@ Bloomer is a web app that provides a service for alerting the public to aquatic 
 ```
 + Image of UI
 ```
+<p align="center">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
+</p>
+
 ## What Are Algae Blooms
 Algae blooms are rapid growths of photosynthetic eukaryotic organisms which can occur in fresh or marine environments. During a bloom, the algae will consume the available nutrients in a given body of water, allowing the population to quickly grow and dominate. Their rapid growth however leads into a rapid death, allowing bacteria to grow. This results in a dead zone as the bacteria consume the available oxygen and nutrients in the water.
 
@@ -94,7 +95,9 @@ The proof-of-concept model only had access to the MODIS-Terra database and will 
 The normalized difference vegetation index (NDVI) and MODIS Band 1 (620–670 nm, the closest match to the desired 683 nm chlorophyll fluorescence band [17]) in water-classified pixels is averaged for that region and shown over time alongside 10th and 90th percentile error bars as an example of time-series outputs available. In future implementations if multiple water bodies are present in an image, each can be segmented and output separately.
 
 <p align="center">
-<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
+  <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/2011278%20Lake%20Erie2.png" width="280" />
+  <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/2011278%20NDVI.png" width="280" /> 
+  <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/2011278_false.png" width="280" />
 </p>
 
 K-Means classification of NDVI regions is non-optimal as it is an unsupervised method and cannot handle non-spherical groups. It has been shown that supervised methods such as support-vector machine (SVM) or spectral-angle mapping classifiers which are both supervised can provide more consistent and accurate classifications of land-cover information [16], however the team did not have sufficient resources to train a supervised model in the available time.
