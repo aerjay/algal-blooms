@@ -66,9 +66,10 @@ plt.show()
 # james code - calculating average NDVI & red reflectance for plots
 
 #### We need to figure out which colour cluster labels as water and put that index number into graphData()
-# timeseriesdata = np.zeros(6, dtype=float)
-# for i in range(6):
-#     timeseriesdata[i] = graphCSV.graphData(rgb, label, 2)
-#
-# np.savetxt(lat + "-" + lon + " " + ".csv", timeseriesdata, delimiter=",")
-# RatioCalculation.show_image(false_colour)
+timeseriesdata = np.zeros(6, dtype = float)
+for i in range(6):
+  timeseriesdata[j] = graphCSV.graphData(rgb, label, 2)
+
+np.savetxt(lat+"-"+lon+".csv", timeseriesdata, delimiter=",")
+RatioCalculation.show_image(false_colour)
+
