@@ -10,7 +10,7 @@ import cv2
 # Let's look at the tile containing Chicago, IL, on May 15, 2019 (day of year 135)
 #
 product = 'MCD43A4'  # Surface reflectance
-dayNum = '2011194'
+dayNum = '2011246'
 lat = 42.124753
 lon = -81.769110
 
@@ -58,8 +58,8 @@ false_colour_legend = rgbbw.create_rgbwb_class_colors(cluster)
 false_colour = rgbbw.paint_by_colours(label, false_colour_legend)
 
 #  resize image to 5 x 2400 x 2400
-# medianBlur = rgb.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
-np.clip(false_colour, 0, 1, false_colour)
+# false_colour = false_colour.reshape((rgb.shape[0], rgb.shape[1], rgb.shape[2]))
+# np.clip(false_colour, 0, 1, false_colour)
 plt.imshow(false_colour)
 plt.show()
 

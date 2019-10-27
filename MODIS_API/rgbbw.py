@@ -81,9 +81,11 @@ def paint_by_colours(labels, clusters):
             label_idx += 1
 
     # blur to get rid of salt + pepper noise
-    # medianBlur = cv2.medianBlur(image, 3)
+    #image = image.astype(np.uint8)
+    image = np.array(image, dtype = np.uint8)
+    medianBlur = cv2.medianBlur(image, 5)
 
-    return image
+    return medianBlur
 
 # Use Example
 # TEST_ARRAY = [[255,255,255, 2],[25,255,25, 0],[1,1,1, 0],[255,25,25, 0],[25,25,255, 0]]
