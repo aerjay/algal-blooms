@@ -99,6 +99,7 @@ The normalized difference vegetation index (NDVI) and MODIS Band 1 (620–670 nm
   <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/2011278%20NDVI.png" width="280" /> 
   <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/2011278_false.png" width="280" />
 </p>
+*MODIS image of Lake Erie, Oct. 5, 2011. Left: True colour image, Center: NDVI heatmap, Right: KMeans clustered false-colour*
 
 K-Means classification of NDVI regions is non-optimal as it is an unsupervised method and cannot handle non-spherical groups. It has been shown that supervised methods such as support-vector machine (SVM) or spectral-angle mapping classifiers which are both supervised can provide more consistent and accurate classifications of land-cover information [16], however the team did not have sufficient resources to train a supervised model in the available time.
 
