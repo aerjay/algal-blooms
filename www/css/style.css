@@ -1,0 +1,27 @@
+.navbar-brand a{
+    font-weight: bold;
+    color: #67BFA6;
+    text-decoration: none;
+}
+.nav li {
+     float: left;
+     list-style-type: none;
+     margin: 50px;
+     color: #67BFA6;
+     }
+.nav a{
+    color: inherit;
+}
+
+.img-container{
+      display:inline-block;
+      margin-right: 20px;
+    }
+
+.img-container p {
+text-align: center;
+}
+
+.hide{
+    display: ;
+}

@@ -20,5 +20,5 @@ $(function () {
         var lat = $("#lat").val(); 
         var long = $("#long").val(); 
         loadMap(lat, long);
-    });
+     })
 });
