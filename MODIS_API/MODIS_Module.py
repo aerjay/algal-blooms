@@ -96,7 +96,8 @@ def download_url_to_temp_file(url):
     print("MODIS file downloaded to: " + modis_temp_path)
     download_url(url, fn)
     return fn
-  
+
+
 # Files are stored according to:
 # http://modissa.blob.core.windows.net/[product]/[htile]/[vtile]/[year][day]/kifilename
 
@@ -116,13 +117,15 @@ def download_data_to_folder(product, lat, long, day_num, delete_on_finish):
         url = modis_blob_root + '/' + remote_fn
         fn = download_url_to_temp_file(url)
 
+    rgb = get_modis_bands_array()
+
     if delete_on_finish:
         shutil.rmtree(modis_temp_path)
 
+    return rgb
 
-def show_modis_image():
-    image_data = get_modis_bands_array()
 
+def show_image(image_data):
     rgb = np.dstack((image_data[0], image_data[1], image_data[2]))
     np.clip(rgb, 0, 1, rgb)
     plt.imshow(rgb)

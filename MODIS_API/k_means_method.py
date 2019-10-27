@@ -11,6 +11,8 @@ def create_labels_colors(input_image, clusters=5):
     @return: labels_array, (1,x,y) image assigning each pixel to a colour classification OR empty array on failure
     """
 
+    print("Grouping the colours in the image into 5 buckets (labels) using K-Means")
+
     #Convert a 5 x 2400 x 2400 image into a (2400*2400) x 5 image
     reshaped_img = np.zeros((input_image.shape[1], input_image.shape[2], input_image.shape[0]), dtype = float)
     for i in range(input_image.shape[0]):
