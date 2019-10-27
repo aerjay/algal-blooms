@@ -1,4 +1,7 @@
 ### To Bloom or Not to Bloom, NASA International Space Apps 2019 Challenge
+<p align="center">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloomer_logo_cropped.png" width="400">
+</p>
 Space Apps Project Page:
 https://2019.spaceappschallenge.org/challenges/living-our-world/bloom-or-not-bloom/teams/bloomer-early-warning-system/project
 
@@ -6,6 +9,7 @@ Link to our video:
 **TBA**
 
 # Bloomer: Early Warning System
+
 ## Table of Contents
   1. [Meet the Team](#meet-the-team)
   2. [Vision](#Vision)
