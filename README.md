@@ -6,9 +6,6 @@ Link to our video:
 https://www.youtube.com/watch?v=J8gF4bBGcoE
 
 # Bloomer: Early Warning System
-<p align="center">
-<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloomer_logo_cropped.png" width="400">
-</p>
 ## Table of Contents
   1. [Meet the Team](#meet-the-team)
   2. [Vision](#Vision)
@@ -50,10 +47,8 @@ From Left to Right:
 ## Vision
 Bloomer is a web app that provides a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom events may also subscribe to a region to access forecasting and predictive models which receive data from satellite images (NASA MODIS) and ground-based measurements.
 
-```
-+ Image of UI
-```
 <p align="center">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloomer_logo_cropped.png" width="250">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
 
@@ -122,9 +117,11 @@ The proposed forecasting algorithm at full implementation would receive data fro
 ## Front End
 A web app was developed using 
 
-```
-+ user interface with the map and false colour image
-```
+<p align="center">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Web%20App%20page%201.png" width="400">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Web%20App%20page%202.png" width="400">
+</p>
+
 ## Next Steps
 ### Prediction Model
 - [ ] Access to the MODIS-Aqua product to use spectral images of water bodies in the prediction model
