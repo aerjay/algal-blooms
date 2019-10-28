@@ -48,7 +48,7 @@ From Left to Right:
 Bloomer is a web app that provides a service for alerting the public to aquatic events such as algae blooms which may pose a health risk. Government, research, and private agencies interested in algae bloom events may also subscribe to a region to access forecasting and predictive models which receive data from satellite images (NASA MODIS) and ground-based measurements.
 
 <p align="center">
-<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloomer_logo_cropped.png" width="250">
+<img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Bloomer_logo_cropped.png" width="250">\
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/App%20High%20Level%20Segmentation.png" width="400">
 </p>
 
@@ -117,6 +117,10 @@ The proposed forecasting algorithm at full implementation would receive data fro
 ## Front End
 A web app was developed using 
 
+The Google satellite map applet was integrated into the latitude/longitude search field to help users navigate and find their desired location. At full implementation, an alternate search method using the name or address of the desired location or the user's current location would increase user accessibility to data.
+
+Users are able to search for locations and see satellite images of that area at any point in time. Users are then able to subscribe to alerts for that area including health warnings and forecast warnings. Users interested in forecasting and mitigation tools may also subscribe to locations as well as access the raw vegetation-indexed and spectrally clustered images and time-series data. At full implementation, the ensemble forecast will be viewable similar to a weather report, listing key variables such as nutrition and water surface temperature.
+
 <p align="center">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Web%20App%20page%201.png" width="400">
 <img src="https://github.com/aerjay/algal-blooms/blob/master/media_photos/Web%20App%20page%202.png" width="400">
@@ -134,7 +138,8 @@ A web app was developed using
   - This would require both sufficient spatial resolution to omit non-water pixels and spectral resolution to distinguish reflectance peaks within the desired band [17]
 
 ### User Segment
-- [ ] 
+- [ ] Allow users to subscribe to certain locations and receive email alerts
+- [ ] Build two user groups, Public and Research, to provide tailored tools for each user segment
 - [ ] Pull local water quality news for public users seeking awareness of health risks in their area
 
 ### Space Segment
