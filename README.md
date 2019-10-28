@@ -39,8 +39,8 @@ From Left to Right:
 **Aerjay Italia, B. Sc. Computer Science, Information Security**  
 *Aer Jay is a junior developer with Aucerna with experience in software and computer security*  
 
-**Benjamin Lee, B.**  
-*Ben is a junior developer with Aucerna*  
+**Benjamin Lee, B. Sc. Computer Science**  
+*Ben is a junior developer working in Alberta and this is second hackathon that he has participated in.*  
 
 **James Xie, B. ASc. Engineering Chemistry**  
 *James is an operations consultant at Stroud International, with experience in project management and process design. James  has led remote sensing and astrobiology payloads as part of the University Rover Challenge and Canadian Satellite Design Challenge, and is currently the assistant project manager for the SEDS Canada CAN-SBX Challenge.*  
