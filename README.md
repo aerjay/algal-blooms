@@ -33,7 +33,7 @@ From Left to Right:
 *Chi is a junior developer with Aucerna, with experience in software development and design. This is Chi's first time participating in a hackathon and was very interested in the topic that combined both her fields of study.*  
 
 **Aerjay Italia, B. Sc. Computer Science, Information Security**  
-*Aer Jay is a junior developer with Aucerna with experience in software and computer security*  
+*Aerjay is a junior developer with Aucerna, with an interest in web development and information security. This is also his first time joining in a hackathon.*  
 
 **Benjamin Lee, B. Sc. Computer Science**  
 *Ben is a junior developer working in Alberta and this is second hackathon that he has participated in.*  
