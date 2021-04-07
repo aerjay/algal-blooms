@@ -26,14 +26,14 @@ def assign_rgb(source_arr, target_rgb, output_arr, output_exempt_indices):
     output_arr[index] = target_rgb
     output_exempt_indices.append(index)
 
-    return (output_arr, output_exempt_indices)
+    return output_arr, output_exempt_indices
 
 
 # @Param: class_colors - Classifier output, must be 2D array with [5][3] dimensions [[R, G, B],...]
 # @Return:  - Array of length 5 which will contain values of color classification
 def create_rgbwb_class_colors(class_colors):
     """
-    @Param: class_colors - Classifier output, must be 2D array with 
+    @Param: class_colors - Classifier output, must be 2D array with
     [5][3] dimensions [[R, G, B],...]
     @Return:  - Array of length 5 which will contain values of color classification"""
 
@@ -58,11 +58,12 @@ def create_rgbwb_class_colors(class_colors):
     # Look for closest blue score
     output_colors_arr, exempt_indices = assign_rgb(class_colors, [255, 0, 0], output_colors_arr, exempt_indices)
 
+    # kmeans outputs random groups, use this function to assign consistent  false colours corresponding to each
+    # between runs
     return output_colors_arr
 
 
 def paint_by_colours(labels, clusters):
-
     print("Swapping classified labels in image with distinct colours ")
     w, h = 2400, 2400
 
@@ -81,8 +82,8 @@ def paint_by_colours(labels, clusters):
             label_idx += 1
 
     # blur to get rid of salt + pepper noise
-    #image = image.astype(np.uint8)
-    image = np.array(image, dtype = np.uint8)
+    # image = image.astype(np.uint8)
+    image = np.array(image, dtype=np.uint8)
     medianBlur = cv2.medianBlur(image, 5)
 
     return medianBlur

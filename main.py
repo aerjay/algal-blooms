@@ -41,6 +41,7 @@ plt.show()
 # cv2.imwrite('NDVI_' + dayNum, rgb_img)
 
 rgb_copy = rgb * 25
+# no modis aqua data, this is terra data
 # [0] is IR band (MODIS 5)
 # [1] is Red band (MODIS 1)
 # [2] is Green band (MODIS 4)
@@ -66,10 +67,9 @@ plt.show()
 # james code - calculating average NDVI & red reflectance for plots
 
 #### We need to figure out which colour cluster labels as water and put that index number into graphData()
-timeseriesdata = np.zeros(6, dtype = float)
+timeseriesdata = np.zeros(6, dtype=float)
 for i in range(6):
-  timeseriesdata[j] = graphCSV.graphData(rgb, label, 2)
+    timeseriesdata[i] = graphCSV.graphData(rgb, label, 2)
 
-np.savetxt(lat+"-"+lon+".csv", timeseriesdata, delimiter=",")
+np.savetxt(lat + "-" + lon + ".csv", timeseriesdata, delimiter=",")
 RatioCalculation.show_image(false_colour)
-

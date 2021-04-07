@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def ndvi_calculation(arr1, arr2):
     """
         Calculates the R/G ratios using the NDVI formula:
@@ -41,10 +42,11 @@ def evi_calculation(blue, red, infrared):
 
 
 def add_ratio_bands(rgb):
+    # ndvi = (near infrared - red) / (infrared + red) chlorophyl good at absorbing red
     ndvi_band = ndvi_calculation(rgb[1], rgb[0])  # pass in red, IR
-    #evi_band = evi_calculation(rgb[2], rgb[1], rgb[0])  # pass in blue, red, IR
+    # evi_band = evi_calculation(rgb[2], rgb[1], rgb[0])  # pass in blue, red, IR
     rgb.append(ndvi_band)
-    #rgb.append(evi_band)
+    # rgb.append(evi_band)
 
     # return a numpy array instead of a list
     numpy_arr = np.array(rgb)
@@ -57,18 +59,20 @@ def add_ratio_bands(rgb):
 
 
 def load_print_file(file):
-    """ 
-        loads and prints a given .npy file 
-        (do not add an extension to file name) 
+    """
+        loads and prints a given .npy file
+        (do not add an extension to file name)
     """
 
     infile = np.load(file + ".npy")
     print(file + ' ')
     print(infile)
 
+
 def show_image(img):
     plt.imshow(img)
     plt.show()
+
 
 ### Function call ###
 # calculate_ratios("img1", "img2")
@@ -125,7 +129,9 @@ def ndvi_calculation(arr1, arr2, save_file):
     np.save(save_file, div_arr)
     # load_print_file("img1-img2")
 """
-    #load_print_file("img1-img2")
+
+
+# load_print_file("img1-img2")
 
 
 def evi_calculation(band1, band3, band5, band6):
